@@ -659,12 +659,12 @@ $db->insert(
 <br/>
 <h4>4.1 Delete data from table</h4>
 <pre class="prettyprint">
-del FROM users WHERE id>'16' 
+delete FROM users WHERE id>'16' 
 </pre>
 
 <p><b>4.1.1: Insert with query method</b></p>
 <pre class="prettyprint linenums">
-$sql = "del FROM users WHERE id>'16'";
+$sql = "delete FROM users WHERE id>'16'";
 $db->query($sql);
 </pre>
 
