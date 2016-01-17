@@ -855,17 +855,17 @@ while($row=$db->fetch_array()) {
 <h4>Logging Your SQL Outputs</h4>
 <p>If you want to enable saving of SQL outputs to SQL, use the code below:</p>
 <pre class="prettyprint linenums">
-$db->log_output_file="sql.log";
-$db->enable_file_logging=true;
-$db->reset_log_output_file();
+$db->session_logger="sql.log";
+$db->session_logging=true;
+$db->reset_session_logger();
 </pre>
 	
 <h4>Clearing SQL Output Logs</h4>
 <p>If you wish to clear the output log:</p>
 <pre class="prettyprint linenums">
-$db->log_output_file="sql.log";
-$db->enable_file_logging=true;
-$db->reset_log_output_file();
+$db->session_logger="sql.log";
+$db->session_logging=true;
+$db->reset_session_logger();
 </pre>
 
 
