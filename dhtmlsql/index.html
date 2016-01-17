@@ -1,0 +1,968 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>DHTMLSQL, a modern and powerful PHP MySQLi Wrapper</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Powerful and modern mysqli alternative for serious PHP developers.">
+	<meta name="author" content="Anthony Ogundipe">
+
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/screen.css" rel="stylesheet">
+	<link href="assets/css/prettify.css" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+	<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.png">
+
+	
+	<script src="assets/js/jquery-1.9.1.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/prettify.js"></script>
+	<script src="assets/js/scripts.js"></script>
+
+</head>
+
+<body data-spy="scroll" data-target="#scrollspy" data-offset="45">
+
+<header class="main-header subhead" id="overview">
+	<div class="container">
+		<h1>DHTMLSQL</h1>
+
+		<p class="lead">
+			<strong>Zero-setup</strong> replacement for
+			<strong><a href="http://php.net/manual/en/book.mysqli.php">MySQLi</a></strong>, and
+			<strong><a href="http://php.net/manual/en/book.mysql.php">MySQL</a></strong> functions.
+		</p>
+	</div>
+</header>
+
+<div class="actions-bar" data-spy="affix" data-offset-top="230">
+	<div class="container">
+		<ul class="actions-bar-buttons clearfix">
+			<li style="padding-left: 0">
+				<a class="btn btn-primary" href="https://github.com/dhtml/dhtmlsql/archive/master.zip">
+					<i class="icon-download icon-white"></i> Download
+				</a>
+			</li>
+			<!--<li>-->
+			<!--<a class="btn disabled" href="">-->
+			<!--<i class="icon-eye-open"></i> View demos-->
+			<!--</a>-->
+			<!--</li>-->
+			<li>
+				<a class="btn" href="https://github.com/dhtml/dhtmlsql/">
+					<i class="icon-github"></i> Github
+				</a>
+			</li>
+			<li>
+				<a class="btn" href="./api">
+					<i class="icon-eye-open"></i> Full API Docs
+				</a>
+			</li>
+			
+			
+			<li style="float: right;padding-right: 0">
+				
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"  style="margin: 0">
+<input type="hidden" name="cmd" value="_s-xclick"/>
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+"/>
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
+</form>
+
+
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="container">
+<div class="row">
+
+<div class="span3" id="scrollspy">
+	<ul class="nav nav-list side-navigation" data-spy="affix" data-offset-top="230">
+		<li><a href="#intro"><i class="icon-chevron-right"></i> About</a></li>
+		<li><a href="#installation"><i class="icon-chevron-right"></i> Installation & config</a></li>
+		<li><a href="#simple"><i class="icon-chevron-right"></i> Simple usage</a></li>
+		<li><a href="#advanced"><i class="icon-chevron-right"></i> Advanced usage</a></li>
+		<li><a href="#navigation"><i class="icon-chevron-right"></i> Shortcuts</a></li>
+		<li><a href="#about"><i class="icon-chevron-right"></i> Notes and credits</a></li>
+		<li><a href="#comments"><i class="icon-chevron-right"></i> Leave a comment</a></li>
+	</ul>
+</div>
+
+<div class="span9">
+<section id="intro">
+	<div class="page-header">
+		<h1>Introduction</h1>
+	</div>
+
+	<h3>What is it?</h3>
+
+	<h4>An advanced, compact and lightweight MySQL database wrapper library, built around PHP's mysqli extension.</h4>
+	In other words, it is <code>MySQLi</code> on steroids. Easy to use, but
+		powerful and customizable. An essential addition to your development toolbox.
+
+
+	<h2>What's so great about it?</h2>
+	<hr>
+
+	<h5>Or: why would you want to replace your trusty <code>mysqli->query('select * from users')</code></h5>
+
+	<div id="feature-showcase" class="accordion">
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a href="#feature-easy" data-parent="#feature-showcase" data-toggle="collapse" class="accordion-toggle">
+					<i class="icon-chevron-right"></i> Dead-simple to install and use.
+				</a>
+			</div>
+			<div class="accordion-body collapse in" id="feature-easy">
+
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						<li>
+							Virtually no installation and no dependencies.
+						<pre class="prettyprint linenums">&lt;?php
+require "library/dhtmlsql.php";
+
+// Connection data (server_address, name, password,  database)
+$db=DHTMLSQL::connect('localhost','admin','pass','dbtest');
+
+if(!$db->connected()) {
+	exit("Unable to connect to database");
+} else {
+	$result=$db->query('select * from users');	
+	while($row=$result->fetch_assoc()) {
+		var_dump($row);
+	}
+}
+</pre>
+						</li>
+
+						<li>
+							Or you can simply use <a href="https://packagist.org/packages/dhtml/dhtmlsql">Composer</a> to
+							handle installation and keeping up to date.
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a href="#feature-sql-import" data-parent="#feature-sql-import" data-toggle="collapse" class="accordion-toggle">
+					<i class="icon-chevron-right"></i> You Can Restore Your Database From SQL in just a single statement
+				</a>
+			</div>
+			<div class="accordion-body collapse" id="feature-sql-import">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						<li>
+						<pre class="prettyprint">
+$db->import("dbtest.sql");
+</pre>
+						</li></ul>
+				
+
+		
+				</div>
+			</div>
+			
+			
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a href="#feature-sql-export" data-parent="#feature-sql-export" data-toggle="collapse" class="accordion-toggle">
+					<i class="icon-chevron-right"></i> You can backup your entire database to an SQL file with just one statement
+				</a>
+			</div>
+			<div class="accordion-body collapse" id="feature-sql-export">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						<li>
+						<pre class="prettyprint">
+$db->export('*','dbtest.sql');
+</pre>
+						</li>
+						</ul>
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
+</section>
+
+<section id="installation">
+
+	<h2>Installation and config</h2>
+	<hr>
+
+	<h3>Requirements</h3>
+
+	<p>PHP 5+ with the <strong>mysqli extension</strong> activated, MySQL 4.1.22+.
+	</p>
+	<h3>Quick start</h3>
+
+	<p>Simply place the library anywhere comfy and include the <code>dhtmlsql.php</code> file from there.</p>
+<pre class="prettyprint linenums">
+require "library/dhtmlsql.php";
+
+// Connection data (server_address, name, password,  database)
+$db=DHTMLSQL::connect('localhost','admin','pass','dbtest');
+
+if(!$db->connected()) {
+exit("Unable to connect to database. Reason: ".$db->connect_error());
+}
+
+//optionally set your character-set and collation here
+$db->set_charset('utf8','utf8_general_ci');
+</pre>
+
+<p>You can save this script somewhere and call it <code>config.php</code>.</p>
+
+	<h3>Advanced Start</h3>
+
+	<p>How about re-using an already existing SQL connection?</p>
+<pre class="prettyprint linenums">
+//connecting directly to MySQL Server
+$mysqli = @new mysqli('localhost','admin','pass','dbtest');
+
+require "library/dhtmlsql.php";
+
+//Re-using already existing connection
+$db=DHTMLSQL::connect($mysqli);
+
+if(!$db->connected()) {
+exit("Unable to connect to database. Reason: ".$db->connect_error());
+}
+
+//optionally set your character-set and collation here
+$db->set_charset('utf8','utf8_general_ci');
+</pre>
+<p> <a class="btn" href="./api">
+					<i class="icon-eye-open"></i> Full API Documentation
+				</a></p>
+<h3>Checking Library Version</h3>
+<p>You need to require the <code>config.php</code> from now henceforth. This little sample is to check if your connection is doing fine</p>
+
+<pre class="prettyprint linenums">
+require "config.php";
+echo $db->version();
+</pre>
+<b>Result</b>
+<pre class="prettyprint">
+1.0.0
+</pre>
+
+<h3>Close the connection</h3>
+<p>The connection will be closed automatically when the script ends. To close the connection before, use the following:</p>
+
+<pre class="prettyprint">
+$db->close();
+</pre>
+</section>
+
+<section id="simple">
+
+	<h2>Simple usage</h2>
+	<hr>
+
+<h3>1. Select Statement </h3>
+
+<br/>
+<h4>1.1 Running Simple Select Statement</h4>
+<pre class="prettyprint">
+select LastName from Employees
+</pre>
+
+<p><b>1.1.1: fetch all rows and dump using result object</b></p>
+<pre class="prettyprint linenums">
+$result=$db->query('select LastName from Employees'); 
+while($row=$result->fetch_assoc()) {
+	var_dump($row);	
+}
+</pre>
+
+<p><b>1.1.2: fetch all rows and dump using internal methods</b></p>
+<pre class="prettyprint linenums">
+$db->query('select LastName from Employees'); 
+while($row=$db->fetch_assoc()) {
+	var_dump($row);	
+}
+</pre>
+
+<p><b>1.1.3: fetch all rows and dump using fetch_assoc_all</b></p>
+<pre class="prettyprint linenums">
+$db->query('select LastName from Employees'); 
+foreach($db->fetch_assoc_all() as $row) {
+	var_dump($row);	
+}
+</pre>
+
+<p><b>1.1.4: fetch all rows and dump using select method</b></p>
+<pre class="prettyprint linenums">
+$db->select('LastName','Employees'); 
+foreach($db->fetch_assoc_all() as $row) {
+	var_dump($row);	
+}
+</pre>
+
+<b>Sample result:</b>
+<pre class="prettyprint linenums">
+array (size=1)
+  'LastName' => string 'J.' (length=2)
+array (size=1)
+  'LastName' => string 'David' (length=5)
+array (size=1)
+  'LastName' => string 'Randel' (length=6)
+array (size=1)
+  'LastName' => string 'Andy' (length=4)
+</pre>
+
+<br/>
+<h4>1.2 Narrowing Down Results With Search</h4>
+
+<pre class="prettyprint">
+select FirstName,LastName from Employees where id > 1 and FirstName!='San'
+</pre>
+
+<p><b>1.2.1: Using Direct SQL</b></p>
+<pre class="prettyprint linenums">
+$db->query("select FirstName,LastName from Employees where id > 1 and FirstName!='San'"); 
+while($row=$db->fetch_assoc()) {
+	var_dump($row);	
+}
+</pre>
+
+<p><b>1.2.2: Using the select method</b></p>
+<pre class="prettyprint linenums">
+$db->select('FirstName,LastName','Employees','id > ? and FirstName!=?',array(1,'San')); 
+while($row=$db->fetch_assoc()) {
+	var_dump($row);	
+}
+</pre>
+
+<b>Sample result:</b>
+<pre class="prettyprint linenums">
+array (size=2)
+  'FirstName' => string 'Owen' (length=4)
+  'LastName' => string 'David' (length=5)
+array (size=2)
+  'FirstName' => string 'Mathew' (length=6)
+  'LastName' => string 'Randel' (length=6)
+</pre>
+
+<br/>
+<h4>1.3 Ordering Results</h4>
+
+<pre class="prettyprint">
+select FirstName,LastName from Employees where id > 1 order by FirstName asc
+</pre>
+
+<p><b>1.3.1: Using Direct SQL</b></p>
+<pre class="prettyprint linenums">
+$db->query("select FirstName,LastName from Employees where id > 1 order by FirstName asc"); 
+while($row=$db->fetch_assoc()) {
+	var_dump($row);	
+}
+</pre>
+
+<p><b>1.3.2: Using the select method</b></p>
+<pre class="prettyprint linenums">
+$db->select('FirstName,LastName','Employees','id > ?',array(1),'FirstName asc'); 
+while($row=$db->fetch_assoc()) {
+	var_dump($row);	
+}
+</pre>
+
+<b>Sample result:</b>
+<pre class="prettyprint linenums">
+array (size=2)
+  'FirstName' => string 'Mathew' (length=6)
+  'LastName' => string 'Randel' (length=6)
+array (size=2)
+  'FirstName' => string 'Owen' (length=4)
+  'LastName' => string 'David' (length=5)
+array (size=2)
+  'FirstName' => string 'San' (length=3)
+  'LastName' => string 'Andy' (length=4)
+</pre>
+
+<br/>
+<h4>1.4 Limiting Results</h4>
+
+<pre class="prettyprint">
+select FirstName,LastName from Employees where id > 1 order by FirstName asc limit 1
+</pre>
+
+<p><b>1.4.1: Using Direct SQL</b></p>
+<pre class="prettyprint linenums">
+$db->query("select FirstName,LastName from Employees where id > 1 order by FirstName asc limit 1"); 
+while($row=$db->fetch_assoc()) {
+	var_dump($row);	
+}
+</pre>
+
+<p><b>1.4.2: Using the select method</b></p>
+<pre class="prettyprint linenums">
+$db->select('FirstName,LastName','Employees','id > ?',array(1),'FirstName asc','1'); 
+while($row=$db->fetch_assoc()) {
+	var_dump($row);	
+}
+</pre>
+
+
+<b>Sample result:</b>
+<pre class="prettyprint linenums">
+array (size=2)
+  'FirstName' => string 'Mathew' (length=6)
+  'LastName' => string 'Randel' (length=6)
+</pre>
+
+<br/>
+<h4>1.5 Fetching A Single Row As An Array</h4>
+<pre class="prettyprint">
+select FirstName,LastName from Employees where id>1 limit 1
+</pre>
+
+<p><b>1.5.1: Using Direct SQL</b></p>
+<pre class="prettyprint linenums">
+$db->query("select FirstName,LastName from Employees where id>1 limit 1"); 
+$row=$db->fetch_assoc();
+var_dump($row);	
+</pre>
+
+<p><b>1.5.2: Using the select method</b></p>
+<pre class="prettyprint linenums">
+$db->select('FirstName,LastName','Employees','id > ?',array(1),'','1'); 
+$row=$db->fetch_assoc();
+var_dump($row);	
+</pre>
+
+<p><b>1.5.3: Using the dlookup method</b></p>
+<pre class="prettyprint linenums">
+$row=$db->dlookup('FirstName,LastName','Employees','id > ?',array(1)); 
+var_dump($row);	
+</pre>
+
+<b>Sample result:</b>
+<pre class="prettyprint linenums">
+array (size=2)
+  'FirstName' => string 'Owen' (length=4)
+  'LastName' => string 'David' (length=5)
+</pre>
+
+<br/>
+<h4>1.6 Fetching A Single Item As A String</h4>
+<pre class="prettyprint">
+select FirstName from Employees where id>1 limit 1
+</pre>
+
+<p><b>1.6.1: Using Direct SQL</b></p>
+<pre class="prettyprint linenums">
+$db->query("select FirstName from Employees where id>1 limit 1"); 
+$row=$db->fetch_assoc();
+if (count($row) == 1) $row=array_pop($row);
+var_dump($row);	
+</pre>
+
+<p><b>1.6.2: Using the select method</b></p>
+<pre class="prettyprint linenums">
+$db->select('FirstName','Employees','id > ?',array(1),'','1'); 
+$row=$db->fetch_assoc();
+if (count($row) == 1) $row=array_pop($row);
+var_dump($row);	
+</pre>
+
+<p><b>1.6.3: Using the dlookup method</b></p>
+<pre class="prettyprint linenums">
+$row=$db->dlookup('FirstName','Employees','id > ?',array(1)); 
+var_dump($row);	
+</pre>
+
+<b>Sample result:</b>
+<pre class="prettyprint">
+string 'Owen' (length=4)
+</pre>
+  
+
+
+<br/>
+<h4>1.7 Joining Tables</h4>
+<pre class="prettyprint">
+SELECT f.first,f.last FROM users u left join profiles p on p.id=u.pid WHERE p.id = '2' and p.status>'5'  
+</pre>
+
+<p><b>1.7.1: Using Direct SQL</b></p>
+<pre class="prettyprint">
+$db->query("SELECT f.first,f.last FROM users u left join profiles p on p.id=u.pid WHERE p.id = '2' and p.status>'5' "); 
+</pre>
+
+<p><b>1.7.2: Using the select method</b></p>
+<pre class="prettyprint">
+$db->select("f.first,f.last","users u left join profiles p on p.id=u.pid","p.id = ? and p.status>?",array(2,5)); 
+</pre>
+
+  
+  
+<h3>2. Create Table Statement </h3>
+
+<br/>
+<h4>2.1 Table creation statement</h4>
+<pre class="prettyprint linenums">
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first` varchar(255) NOT NULL,
+  `last` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+)</pre>
+
+<p><b>2.1.1: Creating the table with query method</b></p>
+<pre class="prettyprint linenums">
+$sql = "CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first` varchar(255) NOT NULL,
+  `last` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+)";
+
+//create table
+$db->query($sql);
+</pre>
+
+
+<p><b>2.1.2: Checking for table existence before creation</b></p>
+<pre class="prettyprint linenums">
+$sql = "CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first` varchar(255) NOT NULL,
+  `last` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+)";
+
+if($db->table_exists('users')) {
+	echo "users already exists";
+} else {
+$db->query($sql);
+	echo "users table created";
+}
+</pre>
+  
+  
+<h3>3. Insert Statement </h3>
+
+<br/>
+<h4>3.1 Insert data into table</h4>
+<pre class="prettyprint">
+INSERT INTO `users`(first,last) VALUES ('Stanley','J.')
+</pre>
+
+<p><b>3.1.1: Insert with query method</b></p>
+<pre class="prettyprint linenums">
+$sql = "INSERT INTO `users`(first,last) VALUES ('Stanley','J.')";
+$db->query($sql);
+</pre>
+
+<p><b>3.1.2: Insert and show <a href="http://php.net/manual/en/mysqli.affected-rows.php" target="_blank">affected rows</a> with <a href="http://php.net/manual/en/mysqli.insert-id.php" target="_blank">insertion id</a></b></p>
+<pre class="prettyprint linenums">
+$sql = "INSERT INTO `users`(first,last) VALUES ('Stanley','J.')";
+$db->query($sql);
+
+echo "Affected rows ".$db->affected_rows." and the insertion id is ".$db->insert_id;
+</pre>
+
+<p><b>3.1.3: Using the Insert method</b></p>
+<pre class="prettyprint linenums">
+$db->insert(
+	'users',
+	array(
+		'first' => 'Stanley',
+		'last' => 'J.',
+	)
+);
+</pre>
+
+<b>Sample output</b>
+<pre class="prettyprint">
+Affected rows 1 and the insertion id is 3
+</pre>
+
+<br/>
+<h4>3.2 Insert multiple data into table</h4>
+<pre class="prettyprint">
+INSERT INTO `users` (`first`,`last`) VALUES ('Owen','David'),('Mathew','Randel'),('San','Andy')
+</pre>
+
+<p><b>3.2.1: Insert with query method</b></p>
+<pre class="prettyprint linenums">
+$sql = "INSERT INTO `users` (`first`,`last`) VALUES ('Owen','David'),('Mathew','Randel'),('San','Andy')";
+$db->query($sql);
+</pre>
+<p><b>3.2.2: Using the Insert_bulk method</b></p>
+<pre class="prettyprint linenums">
+$db->insert_bulk(
+	'users',
+	array('first', 'last'),
+	array(
+		array('Owen', 'David'),
+		array('Mathew', 'Randel'),
+		array('San', 'Andy'),
+	)
+);
+</pre>
+  
+<br/>
+<h4>3.3 Insert and Ignore Duplicates</h4>
+<pre class="prettyprint">
+INSERT IGNORE INTO `mails` (`username`,`email`) VALUES ('support','support@africoders.com')
+</pre>
+
+<p><b>3.3.1: Insert with query method</b></p>
+<pre class="prettyprint linenums">
+$sql = "INSERT IGNORE INTO `mails` (`username`,`email`) VALUES ('support','support@africoders.com')";
+$db->query($sql);
+</pre>
+<p><b>3.3.2: Using the insert method</b></p>
+<pre class="prettyprint linenums">
+$db->insert(
+	'mails',
+	array(
+		'username' => 'support',
+		'email' => 'support@africoders.com',
+	),true
+);
+</pre>
+
+<h4>3.4 Insert or update duplicates</h4>
+<pre class="prettyprint">
+INSERT INTO `mails` (`username`,`email`) VALUES ('support','support@africoders.com') ON DUPLICATE KEY UPDATE `username` = 'tony', `email` = 'tony@africoders.com'
+</pre>
+
+<p><b>3.4.1: Insert with query method</b></p>
+<pre class="prettyprint linenums">
+$sql = "INSERT INTO `mails` (`username`,`email`) VALUES ('support','support@africoders.com') ON DUPLICATE KEY UPDATE `username` = 'tony', `email` = 'tony@africoders.com'";
+$db->query($sql);
+</pre>
+<p><b>3.4.2: Using the insert method</b></p>
+<pre class="prettyprint linenums">
+$db->insert(
+	'mails',
+	array(
+		'username' => 'support',
+		'email' => 'support@africoders.com',
+	),
+	array(
+		'username' => 'tony',
+		'email' => 'tony@africoders.com',
+	)
+
+);
+</pre>
+
+<h3>4. Delete Statement </h3>
+
+<br/>
+<h4>4.1 Delete data from table</h4>
+<pre class="prettyprint">
+delete FROM users WHERE id>'16' 
+</pre>
+
+<p><b>4.1.1: Insert with query method</b></p>
+<pre class="prettyprint linenums">
+$sql = "delete FROM users WHERE id>'16'";
+$db->query($sql);
+</pre>
+
+<p><b>4.1.2: Using del method</b></p>
+<pre class="prettyprint">
+$db->del('users','id>?',array(16));
+</pre>
+
+
+<h3>5. Truncate Statement </h3>
+
+<br/>
+<h4>5.1 Truncate all data in a table</h4>
+<pre class="prettyprint">
+truncate users 
+</pre>
+
+<p><b>5.1.1: Truncate with query method</b></p>
+<pre class="prettyprint linenums">
+$sql = "truncate users ";
+$db->query($sql);
+</pre>
+
+<p><b>5.1.2: Using truncate method</b></p>
+<pre class="prettyprint">
+$db->truncate('users');
+</pre>
+
+
+<h3>6. Update Statement </h3>
+
+<br/>
+<h4>6.1 Update an existing record in a table</h4>
+<pre class="prettyprint">
+UPDATE `users` SET `first` = 'Stan', `last` = 'Jacobs' WHERE id='2'
+</pre>
+
+<p><b>6.1.1: Update with query method</b></p>
+<pre class="prettyprint linenums">
+$sql = "UPDATE `users` SET `first` = 'Stan', `last` = 'Jacobs' WHERE id='2' ";
+$db->query($sql);
+</pre>
+
+<p><b>6.1.2: Using update method</b></p>
+<pre class="prettyprint">
+$db->update(
+	'users',
+	array(
+		'first' => 'Stan',
+		'last' => 'Jacobs',
+	),
+	'id=?',
+	array(2)
+);
+</pre>
+
+
+<br/>
+<h4>7.1 Replace data in a table</h4>
+<pre class="prettyprint">
+Replace INTO `users`(id,first,last) VALUES (1,'Mathew','Junior.')
+</pre>
+
+<p><b>7.1.1: Replace with query method</b></p>
+<pre class="prettyprint linenums">
+$sql = "Replace INTO `users`(id,first,last) VALUES (1,'Mathew','Junior.')";
+$db->query($sql);
+</pre>
+
+<p><b>7.1.3: Using the replace method</b></p>
+<pre class="prettyprint linenums">
+$db->replace(
+	'users',
+	array(
+		'id' => '1',
+		'first' => 'Mathew',
+		'last' => 'Junior',
+	)
+);
+</pre>
+ 
+
+<br/>
+<h4>8.1 Using Prepared Statements</h4>
+<pre class="prettyprint">
+insert INTO `users`(first,last) VALUES ('John','Doe')
+</pre>
+
+<p><b>8.1.1: Using the <a href="http://php.net/manual/en/mysqli.prepare.php" target="_blank">prepare</a> and <a href="http://php.net/manual/en/mysqli-stmt.bind-param.php" target="_blank">bind_param</a> methods</b></p>
+<pre class="prettyprint">
+$stmt = $db->prepare("INSERT INTO users (first, last) VALUES (?, ?)");
+$stmt->bind_param("ss", $first, $last);
+
+// set parameters and execute
+$first = "John";
+$last = "Doe";
+$stmt->execute();
+</pre>
+<p><b>8.1.2: Using the query method</b></p>
+<pre class="prettyprint linenums">
+$first = "John";
+$last = "Doe";
+
+$db->query("INSERT INTO users (first, last) VALUES (?, ?)",array($first,$last));
+</pre>
+
+<p>Please note that all the library methods that make use of array as input automatically prepare statements internally e.g.
+select,dlookup,insert,insert_bulk,update and replace.</p>
+ 
+</section>
+
+
+<section id="advanced">
+
+	<h2>Advanced usage</h2>
+	<hr>
+<h3>Restore Database From SQL File</h3>
+		<p>If you already have your database exported from another source e.g. phpmyadmin, you can import it as shown below.</p>
+
+<pre class="prettyprint linenums">
+if($db->import("dbtest.sql")) {
+echo "Database was imported";	
+} else {
+echo "Unable to import database";	
+}
+</pre>
+
+<h3>Backup Database To SQL File</h3>
+		<p>If you wish to backup your entire database to an sql file:</p>
+<pre class="prettyprint">
+$db->export('*','dbtest.sql');
+</pre>
+
+<p>Backup a single table to file</p>
+<pre class="prettyprint">
+$db->export(array('users'),'users.sql');
+</pre>
+
+<p>Backup multiple tables to file</p>
+<pre class="prettyprint">
+$db->export(array('users','mails','variables'),'dbtables.sql');
+</pre>
+
+<p>Forcing the browser to prompt for download (no backup file)</p>
+<pre class="prettyprint">
+$db->export('*'); //ommit the output file
+</pre>
+
+<h3>Displaying Last SQL Statement</h3>
+<p>You can retrieve the actual SQL statement used in previous query after execution:</p>
+<pre class="prettyprint">
+echo $db->fetch_sql();
+</pre>
+
+<h3>Forcing SQL Preview Mode</h3>
+<p>The preview mode will render the actual SQL statements without execution:</p>
+<pre class="prettyprint linenums">
+$db->preview(true);
+$db->select("f.first,f.last","users u left join profiles p on p.id=u.pid","p.id = ? and p.status>?",array(2,5)); 
+</pre>
+
+
+	</section>
+
+<section id="navigation">
+	<h2>Shortcuts</h2>
+	<hr>
+<h4>Escaping a string like mysqli_real_escape_string</h4>
+<p>Method 1</p>
+<pre class="prettyprint">
+echo $db->escape("I'm a boy");
+</pre>
+
+<p>Method 2</p>
+<pre class="prettyprint">
+echo $db->real_escape_string("I'm a boy");
+</pre>
+	
+<h4>Using the fetch_array method</h4>
+<pre class="prettyprint linenums">
+$db->select('FirstName,LastName','Employees'); 
+while($row=$db->fetch_array()) {
+	var_dump($row);	
+}
+</pre>
+
+	
+<h4>Logging Your SQL Outputs</h4>
+<p>If you want to enable saving of SQL outputs to SQL, use the code below:</p>
+<pre class="prettyprint linenums">
+$db->session_logger="sql.log";
+$db->session_logging=true;
+$db->reset_session_logger();
+</pre>
+	
+<h4>Clearing SQL Output Logs</h4>
+<p>If you wish to clear the output log:</p>
+<pre class="prettyprint linenums">
+$db->session_logger="sql.log";
+$db->session_logging=true;
+$db->reset_session_logger();
+</pre>
+
+
+
+	</section>
+
+
+<section id="about">
+	<h2>Notes</h2>
+	<hr>
+	<p>
+	DHTMLSQL can re-use any existing MySQLi connection. To implement this library in developing your plugins, you need to look at the Advanced Start section and figure out how to get the MySQLi handle of your framework.
+	</p>
+	
+	<p>Please do not forget that there is more to this library than what you have read. You might want to read the 
+	<a class="btn" href="./api">Full API documentation</a> to learn more about this library.</p>
+
+
+	<p>
+		<a href="https://github.com/dhtml/dhtmlsql/issues">Issues and feature requests</a> are very welcome.
+	</p>
+
+	<h3>Credits</h3>
+
+	<p>Inspired by the general open-source community with special thanks to Github for making the life of programmers more fun.</p>
+
+	<h3>Shoutouts</h3>
+
+	<p>Check out <a href="http://www.africoders.com/">an awesome developer portal</a> created by yours truly.</p>
+
+	<h3>Author</h3>
+
+	<p>
+		<strong>Anthony Ogundipe</strong> a.k.a. <a href="https://github.com/dhtml">dhtml</a>
+	</p>
+	<p>
+		<strong>Special thanks</strong> to  <a href="https://www.facebook.com/OmniPotens">Marcellinus Okeke</a> and <a href="https://www.facebook.com/pyjac">Oyebanji Jacob Mayowa</a> for their contributions to this library.
+
+	</p>
+
+	<h3>License</h3>
+
+	<p>DHTMLSQL is licensed under the MIT License.</p>
+</section>
+
+<hr>
+
+<section id="comments">
+	<h2>Leave a comment</h2>
+
+	<div id="disqus_thread"></div>
+	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+</div>
+</div>
+
+</div>
+
+
+<footer class="footer">
+	<div class="container">
+	</div>
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72531012-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript">
+	var disqus_shortname = 'dhtmlsql';
+	(function() {
+		var dsq = document.createElement('script');
+		dsq.type = 'text/javascript';
+		dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+</body>
+</html>
