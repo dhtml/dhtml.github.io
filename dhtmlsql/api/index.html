@@ -1,0 +1,1476 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>
+		DHTMLSQL - An advanced, compact and lightweight MySQL database wrapper library, built around PHP's mysqli extension
+        </title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="./">
+					DHTMLSQL
+                    </a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown open" id="charts-menu"><a href="../" class="dropdown-toggle" data-toggle="dropdown">
+                                    Project Home </a></li>
+<li class="dropdown" id="reports-menu"><a href="https://github.com/dhtml/dhtmlsql" class="dropdown-toggle" data-toggle="dropdown">
+                                    View on github </a></li>
+<li class="dropdown" id="reports-menu"><a href="https://disqus.com/home/forums/dhtmlsql/" class="dropdown-toggle" data-toggle="dropdown">
+                                    Discuss It </a></li>
+<li class="dropdown" id="reports-menu"><a href="https://github.com/dhtml/dhtmlsql/archive/master.zip" class="dropdown-toggle" data-toggle="dropdown">
+                                    Download It</a></li>
+</ul></div>
+<form class="navbar-search pull-right"><input type="text" id="search-query" class="search-query" placeholder="Search"></form>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___call" title="__call() :: ___call"><span class="description">___call</span><pre>__call()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct() :: __construct"><span class="description">__construct</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct() :: __destruct"><span class="description">__destruct</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#method___get" title="__get() :: __get"><span class="description">__get</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#method__log" title="_log() :: __log"><span class="description">__log</span><pre>_log()</pre></a></li>
+<li class="method public "><a href="#method_affected_rows" title="affected_rows() :: affected_rows"><span class="description">affected_rows</span><pre>affected_rows()</pre></a></li>
+<li class="method public "><a href="#method_connect" title="connect() :: connect"><span class="description">connect</span><pre>connect()</pre></a></li>
+<li class="method public "><a href="#method_connect_error" title="connect_error() :: connect_error"><span class="description">connect_error</span><pre>connect_error()</pre></a></li>
+<li class="method public "><a href="#method_connected" title="connected() :: connected"><span class="description">connected</span><pre>connected()</pre></a></li>
+<li class="method public "><a href="#method_db_prefix_tables" title="db_prefix_tables() :: db_prefix_tables"><span class="description">db_prefix_tables</span><pre>db_prefix_tables()</pre></a></li>
+<li class="method public "><a href="#method_del" title="del() :: del"><span class="description">del</span><pre>del()</pre></a></li>
+<li class="method public "><a href="#method_dlookup" title="dlookup() :: dlookup"><span class="description">dlookup</span><pre>dlookup()</pre></a></li>
+<li class="method public "><a href="#method_escape" title="escape() :: escape"><span class="description">escape</span><pre>escape()</pre></a></li>
+<li class="method public "><a href="#method_export" title="export() :: export"><span class="description">export</span><pre>export()</pre></a></li>
+<li class="method public "><a href="#method_fetch_assoc_all" title="fetch_assoc_all() :: fetch_assoc_all"><span class="description">fetch_assoc_all</span><pre>fetch_assoc_all()</pre></a></li>
+<li class="method public "><a href="#method_fetch_sql" title="fetch_sql() :: fetch_sql"><span class="description">fetch_sql</span><pre>fetch_sql()</pre></a></li>
+<li class="method public "><a href="#method_fetch_table" title="fetch_table() :: fetch_table"><span class="description">fetch_table</span><pre>fetch_table()</pre></a></li>
+<li class="method public "><a href="#method_get" title="get() :: get"><span class="description">get</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#method_halt" title="halt() :: __halt"><span class="description">__halt</span><pre>halt()</pre></a></li>
+<li class="method public "><a href="#method_implode" title="implode() :: implode"><span class="description">implode</span><pre>implode()</pre></a></li>
+<li class="method public "><a href="#method_import" title="import() :: import"><span class="description">import</span><pre>import()</pre></a></li>
+<li class="method public "><a href="#method_insert" title="insert() :: insert"><span class="description">insert</span><pre>insert()</pre></a></li>
+<li class="method public "><a href="#method_insert_bulk" title="insert_bulk() :: insert_bulk"><span class="description">insert_bulk</span><pre>insert_bulk()</pre></a></li>
+<li class="method public "><a href="#method_insert_id" title="insert_id() :: insert_id"><span class="description">insert_id</span><pre>insert_id()</pre></a></li>
+<li class="method public "><a href="#method_insert_update" title="insert_update() :: insert_update"><span class="description">insert_update</span><pre>insert_update()</pre></a></li>
+<li class="method public "><a href="#method_load" title="load() :: load"><span class="description">load</span><pre>load()</pre></a></li>
+<li class="method public "><a href="#method_num_rows" title="num_rows() :: Gets the number of rows returned in a select statement"><span class="description">Gets the number of rows returned in a select statement</span><pre>num_rows()</pre></a></li>
+<li class="method public "><a href="#method_optimize" title="optimize() :: optimize"><span class="description">optimize</span><pre>optimize()</pre></a></li>
+<li class="method public "><a href="#method_preview" title="preview() :: preview"><span class="description">preview</span><pre>preview()</pre></a></li>
+<li class="method public "><a href="#method_query" title="query() :: query"><span class="description">query</span><pre>query()</pre></a></li>
+<li class="method public "><a href="#method_replace" title="replace() :: replace"><span class="description">replace</span><pre>replace()</pre></a></li>
+<li class="method public "><a href="#method_reset_result" title="reset_result() :: reset_result"><span class="description">reset_result</span><pre>reset_result()</pre></a></li>
+<li class="method public "><a href="#method_reset_session_logger" title="reset_session_logger() :: reset_session_logger"><span class="description">reset_session_logger</span><pre>reset_session_logger()</pre></a></li>
+<li class="method public "><a href="#method_select" title="select() :: select"><span class="description">select</span><pre>select()</pre></a></li>
+<li class="method public "><a href="#method_set_charset" title="set_charset() :: set_charset"><span class="description">set_charset</span><pre>set_charset()</pre></a></li>
+<li class="method public "><a href="#method_table_exists" title="table_exists() :: table_exists"><span class="description">table_exists</span><pre>table_exists()</pre></a></li>
+<li class="method public "><a href="#method_truncate" title="truncate() :: truncate"><span class="description">truncate</span><pre>truncate()</pre></a></li>
+<li class="method public "><a href="#method_update" title="update() :: update"><span class="description">update</span><pre>update()</pre></a></li>
+<li class="method public "><a href="#method_version" title="version() :: version"><span class="description">version</span><pre>version()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method__build_columns" title="_build_columns() :: _build_columns"><span class="description">_build_columns</span><pre>_build_columns()</pre></a></li>
+<li class="method private "><a href="#method__build_sql" title="_build_sql() :: _build_sql"><span class="description">_build_sql</span><pre>_build_sql()</pre></a></li>
+<li class="method private "><a href="#method__connect" title="_connect() :: _connect"><span class="description">_connect</span><pre>_connect()</pre></a></li>
+<li class="method private "><a href="#method__is_result" title="_is_result() :: is_result"><span class="description">is_result</span><pre>_is_result()</pre></a></li>
+<li class="method private "><a href="#method_session_log" title="session_log() :: session_log"><span class="description">session_log</span><pre>session_log()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public "><a href="#property_halt_on_error" title="$halt_on_error() :: halt_on_error"><span class="description"></span><pre>$halt_on_error</pre></a></li>
+<li class="property public "><a href="#property_last_result" title="$last_result() :: last_result"><span class="description"></span><pre>$last_result</pre></a></li>
+<li class="property public "><a href="#property_print_error" title="$print_error() :: print_error"><span class="description"></span><pre>$print_error</pre></a></li>
+<li class="property public "><a href="#property_returned_rows" title="$returned_rows() :: returned_rows"><span class="description"></span><pre>$returned_rows</pre></a></li>
+<li class="property public "><a href="#property_session_logger" title="$session_logger() :: session_logger"><span class="description"></span><pre>$session_logger</pre></a></li>
+<li class="property public "><a href="#property_session_logging" title="$session_logging() :: session_logging"><span class="description"></span><pre>$session_logging</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_Instance" title="$Instance() :: Instance"><span class="description"></span><pre>$Instance</pre></a></li>
+<li class="property private "><a href="#property_connect_error" title="$connect_error() :: connect_error"><span class="description"></span><pre>$connect_error</pre></a></li>
+<li class="property private "><a href="#property_connection" title="$connection() :: connection"><span class="description"></span><pre>$connection</pre></a></li>
+<li class="property private "><a href="#property_last_sql" title="$last_sql() :: last_sql"><span class="description"></span><pre>$last_sql</pre></a></li>
+<li class="property private "><a href="#property_preview_mode" title="$preview_mode() :: preview_mode"><span class="description"></span><pre>$preview_mode</pre></a></li>
+<li class="property private "><a href="#property_result" title="$result() :: result"><span class="description"></span><pre>$result</pre></a></li>
+<li class="property private "><a href="#property_version" title="$version() :: version"><span class="description"></span><pre>$version</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\DHTMLSQL"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="./"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li> DHTMLSQL
+        </ul>
+<div xmlns:php="http://php.net/xsl" style="margin-bottom:20px;"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="margin: 0">
+<input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHPwYJKoZIhvcNAQcEoIIHMDCCBywCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYBEKcj54Hs/ebsKUU+eXNqTn/ScVyq6vEJcG7UMwYthBZry2mfE/OKKPKKgFjoOfTI8wstn6ULmuLW459igNQimNItVKTkQuzmdJ3D9k81E5g9/N+dKxgWAsTy4nKCT9O5/rOUga6/5Y4dbGfWNfrlvjVJsQCv4mWRyY+7Jj6aU1jELMAkGBSsOAwIaBQAwgbwGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIco7oMBPBVNmAgZjM2RArh1Pv5Dc7TI309u3dTFNoodo6rP7n48ia4fNa/9/F3jLWA536VRhpN6CoRsUryfCRlhvcynjEwVasMBo8xYcaPaheAvuFpyeo50iSTwiXFKGgCV3mEJyj5giPPlWoHicTFZUSsmh2iKPjRioZd4lnkE/M7+yu25qucLVqhz1uEDM7LciEqLUHvDBWfT0y7aPmx5LoUKCCA4cwggODMIIC7KADAgECAgEAMA0GCSqGSIb3DQEBBQUAMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTAeFw0wNDAyMTMxMDEzMTVaFw0zNTAyMTMxMDEzMTVaMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAwUdO3fxEzEtcnI7ZKZL412XvZPugoni7i7D7prCe0AtaHTc97CYgm7NsAtJyxNLixmhLV8pyIEaiHXWAh8fPKW+R017+EmXrr9EaquPmsVvTywAAE1PMNOKqo2kl4Gxiz9zZqIajOm1fZGWcGS0f5JQ2kBqNbvbg2/Za+GJ/qwUCAwEAAaOB7jCB6zAdBgNVHQ4EFgQUlp98u8ZvF71ZP1LXChvsENZklGswgbsGA1UdIwSBszCBsIAUlp98u8ZvF71ZP1LXChvsENZklGuhgZSkgZEwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tggEAMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADgYEAgV86VpqAWuXvX6Oro4qJ1tYVIT5DgWpE692Ag422H7yRIr/9j/iKG4Thia/Oflx4TdL+IFJBAyPK9v6zZNZtBgPBynXb048hsP16l2vi0k5Q2JKiPDsEfBhGI+HnxLXEaUWAcVfCsQFvd2A1sxRr67ip5y2wwBelUecP3AjJ+YcxggGaMIIBlgIBATCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwCQYFKw4DAhoFAKBdMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE2MDExNTIzNTE0NlowIwYJKoZIhvcNAQkEMRYEFLXXU1UTHNiEvdQpkNqvW42+IIz+MA0GCSqGSIb3DQEBAQUABIGAm1VcGjXg7hNz44oCQU1oT57JZRxQ1AzEho8aNho4rE3bvIbYswx8cVLqfRPGvlwCDWz1H/6fsbnk+++rlgurw0i0q1i4ZC0Qm3AltHZyXyAxg+O+9bB55SYG/Gz0XOGHHeTZU7GzYfPcckynqRPBHDcal7+BuewERF83k9BEToY=-----END PKCS7-----     "><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form></div>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">DHTMLSQL</p>
+<div class="details">
+<div class="long_description"><p>An advanced, compact and lightweight MySQL database wrapper library, built around PHP's
+<a href="http://www.php.net/manual/en/book.mysqli.php">MySQLi extension</a>. It provides methods for interacting with MySQL
+databases that are more secure, powerful and intuitive than PHP's default ones.</p>
+<p>It encourages developers to write maintainable code and provides a better default security layer by encouraging the
+use of prepared statements, where arguments are escaped automatically.</p>
+<p>Visit <a href="http://dhtml.github.io/dhtmlsql"><a href="http://dhtml.github.io/dhtmlsql">http://dhtml.github.io/dhtmlsql</a></a> for documentation.</p>
+<p>Visit <a href="http://dhtml.github.io/dhtmlsql/api"><a href="http://dhtml.github.io/dhtmlsql/api">http://dhtml.github.io/dhtmlsql/api</a></a> for complete API documentation.</p>
+<p>For more resources visit <a href="http://github.com/dhtml"><a href="http://github.com/dhtml">http://github.com/dhtml</a></a></p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Anthony Ogundipe a.k.a dhtml <diltony@yahoo.com>
+ @author url     http://www.dhtmlextreme.com , http://www.africoders.com
+ @version    1.0.0 (last revision: January 01, 2016)
+ @copyright  (c) 2016 Anthony Ogundipe
+ @license    http://www.gnu.org/licenses/lgpl-3.0.txt GNU LESSER GENERAL PUBLIC LICENSE
+ @package    DHTMLSQL</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Default.html">Default</a></td>
+</tr>
+</table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___call"></a><div class="element clickable method public method___call " data-target=".method___call " title="public">
+<h2>___call</h2>
+<pre>__call($name, $arguments) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Whenever you call a method that does not exist in this library
+This routine is executed.</p>
+<p>If the method called can be found in mysqli, then it falls back to that
+Otherwise, if the method can be found in the last result object, then a fallback to this is executed
+Otherwise null is returned</p>
+<p>An example of using prepared statements is shown below:
+<code>
+$stmt = $db-&gt;prepare(&quot;INSERT INTO users (first, last) VALUES (?, ?)&quot;);
+$stmt-&gt;bind_param(&quot;ss&quot;, $first, $last);
+// set parameters and execute
+$first = &quot;John&quot;;
+$last = &quot;Doe&quot;;
+$stmt-&gt;execute();
+</code></p>
+<p>prepare and bind_param are standard MySQLi methods but are not defined in this library
+but as a result of this fallback technique, such methods and others like fetch_object, fetch_count etc will work</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument"><h4>$arguments</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-target=".method___construct " title="public">
+<h2>__construct</h2>
+<pre>__construct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Class constructor</p></div></div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct " data-target=".method___destruct " title="public">
+<h2>__destruct</h2>
+<pre>__destruct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Frees the memory associated with the last result.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___get"></a><div class="element clickable method public method___get " data-target=".method___get " title="public">
+<h2>__get</h2>
+<pre>__get($name) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Whenever you attempt to retrieve a property that does not exist in this library
+This routine is executed.</p>
+<p>If the property belongs to the result object, it shall be retrieved
+otherwise, if it belongs to the connection object, it shall be subsequently retrieved
+otherwise null shall be returned</p>
+<p>An example is getting the host information:
+<code>
+echo $db-&gt;host_info;
+</code></p>
+<p>As well as retrieving values like insert_id, affected_rows
+<code>
+echo $db-&gt;insert_id;
+</code>
+<code>
+echo $db-&gt;affected_rows;
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method__log"></a><div class="element clickable method public method__log " data-target=".method__log " title="public">
+<h2>__log</h2>
+<pre>_log(array $data) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Enables processing of database errors</p>
+<p>The following code is used internally when database connection does not exist
+<code>
+if (!$this-&gt;connected()) {
+$this-&gt;_log(array(
+'query' =&gt;  $sql,
+'error' =&gt;  'No active database connection'
+));
+}
+</code>
+A full error error message will be produced internally similar to:
+Error: select * from users =&gt; No active database connection</p>
+<p>The internally generated error message is passed on to the internal halt function</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>An associative array with 2 keys: query and error</p>
+<p>@return void</p></div>
+</div></div>
+</div>
+<a id="method_affected_rows"></a><div class="element clickable method public method_affected_rows " data-target=".method_affected_rows " title="public">
+<h2>affected_rows</h2>
+<pre>affected_rows() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Get number of affected rows in previous MySQL operation</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>number of affected rows otherwise -1 if last result fails</div>
+</div></div>
+</div>
+<a id="method_connect"></a><div class="element clickable method public method_connect " data-target=".method_connect " title="public">
+<h2>connect</h2>
+<pre>connect(mixed $host<code> = null</code>, $username<code> = null</code>, $password<code> = null</code>, $dbname<code> = null</code>, $port<code> = null</code>, $socket<code> = null</code>) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Opens a connection to a MySQL Server and selects a database.</p>
+<p><code>
+// create the database object
+$db = DHTMLSQL::connect();
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$host</h4>
+<code>mixed</code><p>The address of the MySQL server to connect to (i.e. localhost).</p>
+<pre><code>                         Prepending host by <b>p:</b> opens a persistent connection.
+
+                        If the host is an already existing mysqli connection, then it shall be re-used</code></pre>
+<p>@param  string  $username   (Optional) The user name used for authentication when connecting to the MySQL server.</p>
+<p>@param  string  $password   (Optional) The password used for authentication when connecting to the MySQL server.</p>
+<p>@param  string  $dbname     (Optional) The database to be selected after the connection is established.</p>
+<p>@param  string  $port       (Optional) The port number to attempt to connect to the MySQL server.</p>
+<pre><code>                         Leave as empty string to use the default as returned by ini_get("mysqli.default_port").</code></pre>
+<p>@param  string  $socket     (Optional) The socket or named pipe that should be used.</p>
+<pre><code>                         Leave as empty string to use the default as returned by ini_get("mysqli.default_socket").
+
+                         Specifying the socket parameter will not explicitly determine the type of connection
+                         to be used when connecting to the MySQL server. How the connection is made to the MySQL
+                         database is determined by the <i>host</i> argument.</code></pre>
+<p>@return object             DHTMLSQL object is returned</p></div>
+<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument"><h4>$password</h4></div>
+<div class="subelement argument"><h4>$dbname</h4></div>
+<div class="subelement argument"><h4>$port</h4></div>
+<div class="subelement argument"><h4>$socket</h4></div>
+</div></div>
+</div>
+<a id="method_connect_error"></a><div class="element clickable method public method_connect_error " data-target=".method_connect_error " title="public">
+<h2>connect_error</h2>
+<pre>connect_error() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Retrieves connection error after calling the connect method</p>
+<p><code>
+echo $db-&gt;connect_error();
+</code></p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>sql connection error in case of unsuccessful connection otherwise empty string</div>
+</div></div>
+</div>
+<a id="method_connected"></a><div class="element clickable method public method_connected " data-target=".method_connected " title="public">
+<h2>connected</h2>
+<pre>connected() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Confirms if a successful connection has been made to the database
+It is meant to be called after the connect method</p>
+<p><code>
+if(!$db-&gt;connected()) {
+exit(&quot;Unable to connect to database. Reason: &quot;.$db-&gt;connect_error());
+}
+</code></p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>returns true if a successful connection has been made otherwise returns false</div>
+</div></div>
+</div>
+<a id="method_db_prefix_tables"></a><div class="element clickable method public method_db_prefix_tables " data-target=".method_db_prefix_tables " title="public">
+<h2>db_prefix_tables</h2>
+<pre>db_prefix_tables(string $stmt, $table_prefix) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Allows you prefix your table names in curly braces in an sql statement</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$stmt</h4>
+<code>string</code><p>sql statements to be processed</p>
+<p>@param  string  $table_prefix      prefix to add for names of tables</p>
+<p><code>
+$db->db_prefix<em>tables("select * from {users} where 1",'ow</em>');
+</code></p>
+<output>
+select * from ow_users where 1
+ </output>
+<p>@return string     Returns sql statement with table names (in curly braces) prefixed</p></div>
+<div class="subelement argument"><h4>$table_prefix</h4></div>
+</div></div>
+</div>
+<a id="method_del"></a><div class="element clickable method public method_del " data-target=".method_del " title="public">
+<h2>del</h2>
+<pre>del(string $table, $where<code> = ''</code>, $replacements<code> = ''</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Shorthand for deleting some or all items in a table.</p>
+<p><code>
+$db-&gt;del('users','id&gt;?',array(16));
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>Table to delete from.</p>
+<p>@param  string  $where          (Optional) A MySQL WHERE clause (without the WHERE keyword).</p>
+<pre><code>                             Default is "" (an empty string).</code></pre>
+<p>@param  array   $replacements   (Optional) An array with as many items as the total parameter markers ("?", question
+marks) in <i>$where</i>. Each item will be automatically {@link escape()}-ed and
+will replace the corresponding "?". Can also include an array as an item, case in
+which each value from the array will automatically {@link escape()}-ed and then
+concatenated with the other elements from the array - useful when using <i>WHERE
+column IN (?)</i> conditions. See second example {@link query here}.</p>
+<pre><code>                             Default is "" (an empty string).</code></pre>
+<p>@return mixed                   On success, returns a resource
+or FALSE on error.</p></div>
+<div class="subelement argument"><h4>$where</h4></div>
+<div class="subelement argument"><h4>$replacements</h4></div>
+</div></div>
+</div>
+<a id="method_dlookup"></a><div class="element clickable method public method_dlookup " data-target=".method_dlookup " title="public">
+<h2>dlookup</h2>
+<pre>dlookup(string $column, $table, $where<code> = ''</code>, $replacements<code> = ''</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns one or more columns from ONE row of a table.</p>
+<p><code>
+// get name, surname and age of all male users
+$result = $db-&gt;dlookup('name, surname, age', 'users', 'gender = &quot;M&quot;');</p>
+<p>// when working with variables you should use the following syntax
+// this way you will stay clear of SQL injections
+$result = $db-&gt;dlookup('name, surname, age', 'users', 'gender = ?', array($gender));
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>One or more columns to return data from.</p>
+<pre><code>                             <i>If only one column is specified the returned result will be the specified
+                             column's value. If more columns are specified the returned result will be an
+                             associative array!</i>
+
+                             <i>You may use "*" (without the quotes) to return all the columns from the
+                             row.</i></code></pre>
+<p>@param  string  $table          Name of the table in which to search.</p>
+<p>@param  string  $where          (Optional) A MySQL WHERE clause (without the WHERE keyword).</p>
+<pre><code>                             Default is "" (an empty string).</code></pre>
+<p>@param  array   $replacements   (Optional) An array with as many items as the total parameter markers ("?", question
+marks) in <i>$where</i>. Each item will be automatically {@link escape()}-ed and
+will replace the corresponding "?". Can also include an array as an item, case in
+which each value from the array will automatically {@link escape()}-ed and then
+concatenated with the other elements from the array - useful when using <i>WHERE
+column IN (?)</i> conditions. See second example {@link query here}.</p>
+<pre><code>                             Default is "" (an empty string).</code></pre>
+<p>@return mixed                   Found value/values or FALSE if no records matching the given criteria (if any)
+were found. It also returns FALSE if there are no records in the table or if there
+was an error.</p></div>
+<div class="subelement argument"><h4>$table</h4></div>
+<div class="subelement argument"><h4>$where</h4></div>
+<div class="subelement argument"><h4>$replacements</h4></div>
+</div></div>
+</div>
+<a id="method_escape"></a><div class="element clickable method public method_escape " data-target=".method_escape " title="public">
+<h2>escape</h2>
+<pre>escape(string $string) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Escapes special characters in a string that's to be used in an SQL statement in order to prevent SQL injections.</p>
+<p><i>This method also encloses given string in single quotes!</i></p>
+<p><i>Works even if <a href="http://www.php.net/manual/en/info.configuration.php#ini.magic-quotes-gpc">magic_quotes</a>
+is ON.</i></p>
+<p><code>
+// use the method in a query
+// THIS IS NOT THE RECOMMENDED METHOD!
+$db-&gt;query('
+SELECT
+*
+FROM
+users
+WHERE
+gender = &quot;' . $db-&gt;escape($gender) . '&quot;
+');</p>
+<p>// the recommended method
+// (variable are automatically escaped this way)
+$db-&gt;query('
+SELECT
+*
+FROM
+users
+WHERE
+gender = ?
+', array($gender));
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>String to be quoted and escaped.</p>
+<p>@return string              Returns the quoted string with special characters escaped in order to prevent SQL
+injections.     .</p></div>
+</div></div>
+</div>
+<a id="method_export"></a><div class="element clickable method public method_export " data-target=".method_export " title="public">
+<h2>export</h2>
+<pre>export(mixed $tables<code> = '*'</code>, $file<code> = null</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Allows you to export entire database or specified tables to file or trigger download via browser</p>
+<p>saves entire database to output.sql
+<code>
+$db-&gt;export('*','output.sql');
+</code></p>
+<p>saves a single table to output.sql
+<code>
+$db-&gt;export(array('users'),'output.sql');
+</code></p>
+<p>saves 2 tables to output.sql
+<code>
+$db-&gt;export(array('users','country'),'output.sql');
+</code></p>
+<p>downloads entire database via browser
+<code>
+$db-&gt;export('*');
+</code></p>
+<p>downloads a single table via browser
+<code>
+$db-&gt;export(array('users'));
+</code></p>
+<p>downloads 2 tables via browser
+<code>
+$db-&gt;export(array('users','country'));
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$tables</h4>
+<code>mixed</code><p>(Optional) An array containing tables for export, or
+A string containing '*' to process all tables in the database (default)</p>
+<p>@param  string    $file        (Optional) The file to backup database to.</p>
+<pre><code>                             <i>If not specified, a browser download will be triggered.</i></code></pre>
+<p>@return void</p></div>
+<div class="subelement argument"><h4>$file</h4></div>
+</div></div>
+</div>
+<a id="method_fetch_assoc_all"></a><div class="element clickable method public method_fetch_assoc_all " data-target=".method_fetch_assoc_all " title="public">
+<h2>fetch_assoc_all</h2>
+<pre>fetch_assoc_all() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns an associative array containing all the rows from the resource created by the previous query or from the
+resource given as argument and moves the internal pointer to the end.</p>
+<p><code>
+// run a query
+$db-&gt;query('SELECT * FROM table WHERE criteria = ?', array($criteria));</p>
+<p>// fetch all the rows as an associative array
+$records = $db-&gt;fetch_assoc_all();
+</code></p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Returns an associative array containing all the rows from the resource created
+                                 by the previous query or from the resource given as argument and moves the
+                                 internal pointer to the end. Returns FALSE on error.</div>
+</div></div>
+</div>
+<a id="method_fetch_sql"></a><div class="element clickable method public method_fetch_sql " data-target=".method_fetch_sql " title="public">
+<h2>fetch_sql</h2>
+<pre>fetch_sql() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Gets the last SQL statement executed</p>
+<p><code>
+$db-&gt;query(&quot;show tables&quot;);
+echo $db-&gt;fetch_sql();
+</code></p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>the last sql statement executed</div>
+</div></div>
+</div>
+<a id="method_fetch_table"></a><div class="element clickable method public method_fetch_table " data-target=".method_fetch_table " title="public">
+<h2>fetch_table</h2>
+<pre>fetch_table(string $t) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Generates an export of a table</p>
+<p>// saves entire database to output.sql
+<code>
+$db-&gt;fetch_table('users');
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$t</h4>
+<code>string</code><p>name of table to export</p>
+<p>@return string     the entire export sql statements for the table</p></div>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get " data-target=".method_get " title="public">
+<h2>get</h2>
+<pre>get() : object</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Statical way of instantiating the class</p>
+<p><code>
+$db=DHTMLSQL::get();
+</code></p>
+<p>Since it is chainable, so we can also use it to connect to the database
+<code>
+$db=DHTMLSQL::get()-&gt;connect('localhost','admin','pass','dbtest');
+</code></p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>DHTMLSQL class object is returned</div>
+</div></div>
+</div>
+<a id="method_halt"></a><div class="element clickable method public method_halt " data-target=".method_halt " title="public">
+<h2>__halt</h2>
+<pre>halt(string $message) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This is a routine meant to handle MySQLi query errors
+If you try to select data from a table that does not exist
+An error message explaining the problem will be passed to _log and finally to halt
+halt acts in various ways depending on certain conditions</p>
+<ol>
+<li>If you have any halt function defined in the general scope, that function will be called with a message parameter</li>
+<li>If the print_error configuration variable is true (default), then the error will be printed on screen
+<ol>
+<li>If halt_on_error configuration variable is set to true (default) then execution of the script is stopped</li>
+</ol></li>
+</ol></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>Error message explaining why execution should be stopped</p>
+<p>@return void</p></div>
+</div></div>
+</div>
+<a id="method_implode"></a><div class="element clickable method public method_implode " data-target=".method_implode " title="public">
+<h2>implode</h2>
+<pre>implode(array $pieces) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Works similarly to PHP's implode() function with the difference that the &quot;glue&quot; is always the comma, and that
+this method \escape()'s arguments.</p>
+<p><i>This was useful for escaping an array's values used in SQL statements with the &quot;IN&quot; keyword, before adding
+arrays directly in the replacement array became possible in version 2.8.6</i></p>
+<p><code>
+$array = array(1,2,3,4);</p>
+<p>//  this would work as the WHERE clause in the SQL statement would become
+//  WHERE column IN ('1','2','3','4')
+$db-&gt;query('
+SELECT
+column
+FROM
+table
+WHERE
+column IN (' . $db-&gt;implode($array) . ')
+');</p>
+<p>$db-&gt;query('
+SELECT
+column
+FROM
+table
+WHERE
+column IN (?)
+', array($array));
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pieces</h4>
+<code>array</code><p>An array with items to be "glued" together</p>
+<p>@return string              Returns the string representation of all the array elements in the same order,
+escaped and with commas between each element.</p></div>
+</div></div>
+</div>
+<a id="method_import"></a><div class="element clickable method public method_import " data-target=".method_import " title="public">
+<h2>import</h2>
+<pre>import(string $path) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Allows you to parse an entire sql file</p>
+<p>// downloads a single table via browser
+$db-&gt;import(&quot;database.sql&quot;);
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The file containing the sql query.</p>
+<p>@return boolean                True for success, false for failure</p></div>
+</div></div>
+</div>
+<a id="method_insert"></a><div class="element clickable method public method_insert " data-target=".method_insert " title="public">
+<h2>insert</h2>
+<pre>insert(string $table, $columns, $ignore<code> = false</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Shorthand for INSERT queries.</p>
+<p>When using this method column names will be enclosed in grave accents &quot; ` &quot; (thus, allowing seamless usage of
+reserved words as column names) and values will be automatically \escape()d in order to prevent SQL injections.</p>
+<p><code>
+$db-&gt;insert(
+'table',
+array(
+'column1'   =&gt;  'value1',
+'column2'   =&gt;  'value2',
+));
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>Table in which to insert.</p>
+<p>@param  array   $columns        An associative array where the array's keys represent the columns names and the
+array's values represent the values to be inserted in each respective column.</p>
+<pre><code>                             Column names will be enclosed in grave accents " ` " (thus, allowing seamless
+                             usage of reserved words as column names) and values will be automatically
+                             {@link escape()}d in order to prevent SQL injections.</code></pre>
+<p>@param  boolean $ignore         (Optional) By default trying to insert a record that would cause a duplicate
+entry for a primary key would result in an error. If you want these errors to be
+skipped set this argument to TRUE.
+If $ignore is an array, then insert_update method is triggered automatically</p>
+<pre><code>                             For more information see {@link http://dev.mysql.com/doc/refman/5.5/en/insert.html MySQL's INSERT IGNORE syntax}.
+
+                             Default is FALSE.</code></pre>
+<p>@return boolean                 Returns TRUE on success of FALSE on error.</p></div>
+<div class="subelement argument"><h4>$columns</h4></div>
+<div class="subelement argument"><h4>$ignore</h4></div>
+</div></div>
+</div>
+<a id="method_insert_bulk"></a><div class="element clickable method public method_insert_bulk " data-target=".method_insert_bulk " title="public">
+<h2>insert_bulk</h2>
+<pre>insert_bulk(string $table, $columns, $data, $ignore<code> = false</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Shorthand for inserting multiple rows in a single query.</p>
+<p>When using this method column names will be enclosed in grave accents &quot; ` &quot; (thus, allowing seamless usage of
+reserved words as column names) and values will be automatically \escape()d in order to prevent SQL injections.</p>
+<p><code>
+$db-&gt;insert_bulk(
+'table',
+array('column1', 'column2'),
+array(
+array('value1', 'value2'),
+array('value3', 'value4'),
+array('value5', 'value6'),
+array('value7', 'value8'),
+array('value9', 'value10')
+)
+));
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>Table in which to insert.</p>
+<p>@param  array   $columns        An array with columns to insert values into.</p>
+<pre><code>                             Column names will be enclosed in grave accents " ` " (thus, allowing seamless
+                             usage of reserved words as column names).</code></pre>
+<p>@param  array  $data           An array of an unlimited number of arrays containing values to be inserted.</p>
+<pre><code>                             Values will be automatically {@link escape()}d in order to prevent SQL injections.</code></pre>
+<p>@param  boolean $ignore         (Optional) By default, trying to insert a record that would cause a duplicate
+entry for a primary key would result in an error. If you want these errors to be
+skipped set this argument to TRUE.</p>
+<pre><code>                             For more information see {@link http://dev.mysql.com/doc/refman/5.5/en/insert.html MySQL's INSERT IGNORE syntax}.
+
+                             Default is FALSE.</code></pre>
+<p>@return boolean                 Returns TRUE on success of FALSE on error.</p></div>
+<div class="subelement argument"><h4>$columns</h4></div>
+<div class="subelement argument"><h4>$data</h4></div>
+<div class="subelement argument"><h4>$ignore</h4></div>
+</div></div>
+</div>
+<a id="method_insert_id"></a><div class="element clickable method public method_insert_id " data-target=".method_insert_id " title="public">
+<h2>insert_id</h2>
+<pre>insert_id() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Get the ID generated from the previous INSERT operation</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>returns generated ID otherwise 0 (if no ID was generated or autoincrement was not set)</div>
+</div></div>
+</div>
+<a id="method_insert_update"></a><div class="element clickable method public method_insert_update " data-target=".method_insert_update " title="public">
+<h2>insert_update</h2>
+<pre>insert_update(string $table, $columns, $update<code> = array()</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>When using this method, if a row is inserted that would cause a duplicate value in a UNIQUE index or PRIMARY KEY,
+an UPDATE of the old row is performed.</p>
+<p>Read more at <a href="http://dev.mysql.com/doc/refman/5.0/en/insert-on-duplicate.html"><a href="http://dev.mysql.com/doc/refman/5.0/en/insert-on-duplicate.html">http://dev.mysql.com/doc/refman/5.0/en/insert-on-duplicate.html</a></a>.</p>
+<p>When using this method, column names will be enclosed in grave accents &quot; ` &quot; (thus, allowing seamless usage of
+reserved words as column names) and values will be automatically \escape()d in order to prevent SQL injections.</p>
+<p><code>
+// presuming article_id is a UNIQUE index or PRIMARY KEY, the statement below will insert a new row for given
+// $article_id and set the &quot;votes&quot; to 0. But, if $article_id is already in the database, increment the votes'
+// numbers.
+$db-&gt;insert_update(
+'table',
+array(
+'article_id'    =&gt;  $article_id,
+'votes'         =&gt;  0,
+),
+array(
+'votes'         =&gt;  'INC(1)',
+)
+);
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>Table in which to insert/update.</p>
+<p>@param  array   $columns        An associative array where the array's keys represent the columns names and the
+array's values represent the values to be inserted in each respective column.</p>
+<pre><code>                             Column names will be enclosed in grave accents " ` " (thus, allowing seamless
+                             usage of reserved words as column names) and values will be automatically
+                             {@link escape()}d.</code></pre>
+<p>@param  array   $update         (Optional) An associative array where the array's keys represent the columns names
+and the array's values represent the values to update the columns' values to.</p>
+<pre><code>                             This array represents the columns/values to be updated if the inserted row would
+                             cause a duplicate value in a UNIQUE index or PRIMARY KEY.
+
+                             If an empty array is given, the values in <i>$columns</i> will be used.
+
+                             Column names will be enclosed in grave accents " ` " (thus, allowing seamless
+                             usage of reserved words as column names) and values will be automatically
+                             {@link escape()}d.
+
+                             A special value may also be used for when a column's value needs to be
+                             incremented or decremented. In this case, use <i>INC(value)</i> where <i>value</i>
+                             is the value to increase the column's value with. Use <i>INC(-value)</i> to decrease
+                             the column's value. See {@link update()} for an example.
+
+                             Default is an empty array.</code></pre>
+<p>@return boolean                 Returns TRUE on success of FALSE on error.</p></div>
+<div class="subelement argument"><h4>$columns</h4></div>
+<div class="subelement argument"><h4>$update</h4></div>
+</div></div>
+</div>
+<a id="method_load"></a><div class="element clickable method public method_load " data-target=".method_load " title="public">
+<h2>load</h2>
+<pre>load() </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Static constructor of class
+You can instantiate the class object in a dynamic manner via $db=new DHTMLSQL();
+You can instantiate the class object in a static manner via $db=DHTMLSQL::load();</p></div></div></div>
+</div>
+<a id="method_num_rows"></a><div class="element clickable method public method_num_rows " data-target=".method_num_rows " title="public">
+<h2>Gets the number of rows returned in a select statement</h2>
+<pre>num_rows() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p><code>
+$db-&gt;query(&quot;show tables&quot;);
+echo $db-&gt;num_rows();
+</code></p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>the number of rows returned otherwise 0</div>
+</div></div>
+</div>
+<a id="method_optimize"></a><div class="element clickable method public method_optimize " data-target=".method_optimize " title="public">
+<h2>optimize</h2>
+<pre>optimize() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Optimizes all tables that have overhead (unused, lost space)</p>
+<p><code>
+// optimize all tables in the database
+$db-&gt;optimize();
+</code></p></div></div></div>
+</div>
+<a id="method_preview"></a><div class="element clickable method public method_preview " data-target=".method_preview " title="public">
+<h2>preview</h2>
+<pre>preview($mode) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Turns on and off the preview mode.
+When preview mode is on, SQL statements are displayed on screen rather than executed</p>
+<p><code>
+$db-&gt;preview(true);
+$db-&gt;query(&quot;show tables&quot;);
+echo $db-&gt;num_rows();
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$mode</h4></div>
+</div></div>
+</div>
+<a id="method_query"></a><div class="element clickable method public method_query " data-target=".method_query " title="public">
+<h2>query</h2>
+<pre>query(string $sql, $replacements<code> = ''</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Runs a MySQL query.</p>
+<p>After a SELECT query you can get the number of returned rows by reading the \returned_rows property.</p>
+<p>After an UPDATE, INSERT or DELETE query you can get the number of affected rows by reading the
+\affected_rows property.</p>
+<p><code>
+// run a query
+$db-&gt;query('
+SELECT
+*
+FROM
+users
+WHERE
+gender = ?
+', array($gender));</p>
+<p>// array as replacement, for use with WHERE-IN conditions
+$db-&gt;query('
+SELECT
+*
+FROM
+users
+WHERE
+gender = ? AND
+id IN (?)
+', array('f', array(1, 2, 3)));
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>MySQL statement to execute.</p>
+<p>@param  array   $replacements   (Optional) An array with as many items as the total parameter markers ("?", question
+marks) in <i>$sql</i>. Each item will be automatically {@link escape()}-ed and
+will replace the corresponding "?". Can also include an array as an item, case in
+which each value from the array will automatically {@link escape()}-ed and then
+concatenated with the other elements from the array - useful when using <i>WHERE
+column IN (?)</i> conditions.</p>
+<pre><code>                             Default is "" (an empty string).</code></pre>
+<p>@return mixed                   On success, returns a resource
+or FALSE on error.</p></div>
+<div class="subelement argument"><h4>$replacements</h4></div>
+</div></div>
+</div>
+<a id="method_replace"></a><div class="element clickable method public method_replace " data-target=".method_replace " title="public">
+<h2>replace</h2>
+<pre>replace(string $table, $columns) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Shorthand for REPLACE queries.</p>
+<p>When using this method column names will be enclosed in grave accents &quot; ` &quot; (thus, allowing seamless usage of
+reserved words as column names) and values will be automatically \escape()d in order to prevent SQL injections.</p>
+<p><code>
+$db-&gt;replace(
+'table',
+array(
+'column1'   =&gt;  'value1',
+'column2'   =&gt;  'value2',
+));
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>Table in which to replace into.</p>
+<p>@param  array   $columns        An associative array where the array's keys represent the columns names and the
+array's values represent the values to be inserted in each respective column.</p>
+<pre><code>                             Column names will be enclosed in grave accents " ` " (thus, allowing seamless
+                             usage of reserved words as column names) and values will be automatically
+                             {@link escape()}d in order to prevent SQL injections.</code></pre>
+<p>@return boolean                 Returns TRUE on success of FALSE on error.</p></div>
+<div class="subelement argument"><h4>$columns</h4></div>
+</div></div>
+</div>
+<a id="method_reset_result"></a><div class="element clickable method public method_reset_result " data-target=".method_reset_result " title="public">
+<h2>reset_result</h2>
+<pre>reset_result() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Reset the internal pointer back to zero</p>
+<p><code>
+$db-&gt;query(&quot;show tables&quot;);
+while($row=$db-&gt;fetch_assoc()) {
+var_dump($row);
+}</p>
+<p>//we reset the result pointer here</p>
+<p>$db-&gt;reset_result();</p>
+<p>//so that we can loop through the results again</p>
+<p>while($row=$db-&gt;fetch_assoc()) {
+var_dump($row);
+}</p></div></div></div>
+</div>
+<a id="method_reset_session_logger"></a><div class="element clickable method public method_reset_session_logger " data-target=".method_reset_session_logger " title="public">
+<h2>reset_session_logger</h2>
+<pre>reset_session_logger() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Empties the session_log output file</p>
+<p><code>
+$db-&gt;session_logger=&quot;sql.log&quot;;
+$db-&gt;reset_session_logger();
+</code></p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>true if successful (or file does not exist), false if no output file was specified</div>
+</div></div>
+</div>
+<a id="method_select"></a><div class="element clickable method public method_select " data-target=".method_select " title="public">
+<h2>select</h2>
+<pre>select(mixed $columns, $table, $where<code> = ''</code>, $replacements<code> = ''</code>, $order<code> = ''</code>, $limit<code> = ''</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Shorthand for simple SELECT queries.</p>
+<p>For complex queries (using UNION, JOIN, etc) use the \query() method.</p>
+<p>When using this method, column names will be enclosed in grave accents &quot; ` &quot; (thus, allowing seamless usage of
+reserved words as column names) and values will be automatically \escape()d in order to prevent SQL injections.</p>
+<p><code>
+$db-&gt;select(
+'column1, column2',
+'table',
+'criteria = ?',
+array($criteria)
+);</p>
+<p>// or</p>
+<p>$db-&gt;select(
+array('column1', 'column2'),
+'table',
+'criteria = ?',
+array($criteria)
+);</p>
+<p>// or</p>
+<p>$db-&gt;select(
+'*',
+'table',
+'criteria = ?',
+array($criteria)
+);
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>mixed</code><p>A string with comma separated values or an array representing valid column names
+as used in a SELECT statement.</p>
+<pre><code>                             <samp>These will be enclosed in grave accents, so make sure you are only using
+                             column names and not things like "tablename.*"! You may also use "*" instead
+                             of column names to select all columns from a table.</samp></code></pre>
+<p>@param  string  $table          Table in which to search.</p>
+<pre><code>                             <i>Note that table name will be enclosed in grave accents " ` " and thus only
+                             one table name should be used! For anything but a simple select query use the
+                             {@link query()} method.</i></code></pre>
+<p>@param  string  $where          (Optional) A MySQL WHERE clause (without the WHERE keyword).</p>
+<pre><code>                             Default is "" (an empty string).</code></pre>
+<p>@param  array   $replacements   (Optional) An array with as many items as the total parameter markers ("?", question
+marks) in <i>$where</i>. Each item will be automatically {@link escape()}-ed and
+will replace the corresponding "?". Can also include an array as an item, case in
+which each value from the array will automatically {@link escape()}-ed and then
+concatenated with the other elements from the array - useful when using <i>WHERE
+column IN (?)</i> conditions. See second example {@link query here}.</p>
+<pre><code>                             Default is "" (an empty string).</code></pre>
+<p>@param  string  $order          (Optional) A MySQL ORDER BY clause (without the ORDER BY keyword).</p>
+<pre><code>                             Default is "" (an empty string).</code></pre>
+<p>@param  mixed   $limit          (Optional) A MySQL LIMIT clause (without the LIMIT keyword).</p>
+<pre><code>                             Default is "" (an empty string).</code></pre>
+<p>@return mixed                   On success, returns a resource
+or FALSE on error.</p></div>
+<div class="subelement argument"><h4>$table</h4></div>
+<div class="subelement argument"><h4>$where</h4></div>
+<div class="subelement argument"><h4>$replacements</h4></div>
+<div class="subelement argument"><h4>$order</h4></div>
+<div class="subelement argument"><h4>$limit</h4></div>
+</div></div>
+</div>
+<a id="method_set_charset"></a><div class="element clickable method public method_set_charset " data-target=".method_set_charset " title="public">
+<h2>set_charset</h2>
+<pre>set_charset(string $charset<code> = 'utf8'</code>, $collation<code> = 'utf8_general_ci'</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Sets MySQL character set and collation.</p>
+<p>The ensure that data is both properly saved and retrieved from the database you should call this method first
+thing after connecting to the database.</p>
+<p>If this method is not called a warning message will be displayed in the debugging console.</p>
+<p>Warnings can be disabled by setting the \disable_warnings property.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$charset</h4>
+<code>string</code><p>(Optional) The character set to be used by the database.</p>
+<pre><code>                         Default is 'utf8'.
+
+                         For a list of possible values see:
+                         {@link http://dev.mysql.com/doc/refman/5.1/en/charset-charsets.html}</code></pre>
+<p>@param  string  $collation  (Optional) The collation to be used by the database.</p>
+<pre><code>                         Default is 'utf8_general_ci'.
+
+                         For a list of possible values see:
+                         {@link http://dev.mysql.com/doc/refman/5.1/en/charset-charsets.html}</code></pre>
+<p>@return void</p></div>
+<div class="subelement argument"><h4>$collation</h4></div>
+</div></div>
+</div>
+<a id="method_table_exists"></a><div class="element clickable method public method_table_exists " data-target=".method_table_exists " title="public">
+<h2>table_exists</h2>
+<pre>table_exists(string $table) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Checks whether a table exists in the current database.</p>
+<p><code>
+// checks whether table &quot;users&quot; exists
+table_exists('users');
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The name of the table to check if it exists in the database.</p>
+<p>@return boolean             Returns TRUE if table given as argument exists in the database or FALSE if not.</p></div>
+</div></div>
+</div>
+<a id="method_truncate"></a><div class="element clickable method public method_truncate " data-target=".method_truncate " title="public">
+<h2>truncate</h2>
+<pre>truncate(string $table) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Shorthand for truncating tables.</p>
+<p><i>Truncating a table is quicker then deleting all rows, as stated in the MySQL documentation at
+<a href="http://dev.mysql.com/doc/refman/4.1/en/truncate-table.html"><a href="http://dev.mysql.com/doc/refman/4.1/en/truncate-table.html">http://dev.mysql.com/doc/refman/4.1/en/truncate-table.html</a></a>. Truncating a table also resets the value of
+the AUTO INCREMENT column.</i></p>
+<p><code>
+$db-&gt;truncate('table');
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>Table to truncate.</p>
+<p>@param  boolean $highlight      (Optional) If set to TRUE the debugging console will be opened automatically
+and the query will be shown - really useful for quick and easy debugging.</p>
+<pre><code>                             Default is FALSE.</code></pre>
+<p>@return boolean                 Returns TRUE on success of FALSE on error.</p></div>
+</div></div>
+</div>
+<a id="method_update"></a><div class="element clickable method public method_update " data-target=".method_update " title="public">
+<h2>update</h2>
+<pre>update(string $table, $columns, $where<code> = ''</code>, $replacements<code> = ''</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Shorthand for UPDATE queries.</p>
+<p>When using this method column names will be enclosed in grave accents &quot; ` &quot; (thus, allowing seamless usage of
+reserved words as column names) and values will be automatically \escape()d in order to prevent SQL injections.</p>
+<p>After an update check \affected_rows to find out how many rows were affected.</p>
+<p><code>
+$db-&gt;update(
+'table',
+array(
+'column1'   =&gt;  'value1',
+'column2'   =&gt;  'value2',
+),
+'criteria = ?',
+array($criteria)
+);
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>Table in which to update.</p>
+<p>@param  array   $columns        An associative array where the array's keys represent the columns names and the
+array's values represent the values to be inserted in each respective column.</p>
+<pre><code>                             Column names will be enclosed in grave accents " ` " (thus, allowing seamless
+                             usage of reserved words as column names) and values will be automatically
+                             {@link escape()}d.
+
+                             A special value may also be used for when a column's value needs to be
+                             incremented or decremented. In this case, use <i>INC(value)</i> where <i>value</i>
+                             is the value to increase the column's value with. Use <i>INC(-value)</i> to decrease
+                             the column's value:
+
+                             <code>
+                             $db->update(
+                                 'table',
+                                 array(
+                                     'column'    =>  'INC(?)',
+                                 ),
+                                 'criteria = ?',
+                                 array(
+                                     $value,
+                                     $criteria
+                                 )
+                             );
+                             </code>
+
+                             ...is equivalent to
+
+                             <code>
+                             $db->query('UPDATE table SET column = colum + ? WHERE criteria = ?', array($value, $criteria));
+                             </code></code></pre>
+<p>@param  string  $where          (Optional) A MySQL WHERE clause (without the WHERE keyword).</p>
+<pre><code>                             Default is "" (an empty string).</code></pre>
+<p>@param  array   $replacements   (Optional) An array with as many items as the total parameter markers ("?", question
+marks) in <i>$where</i>. Each item will be automatically {@link escape()}-ed and
+will replace the corresponding "?". Can also include an array as an item, case in
+which each value from the array will automatically {@link escape()}-ed and then
+concatenated with the other elements from the array - useful when using <i>WHERE
+column IN (?)</i> conditions. See second example {@link query here}.</p>
+<pre><code>                             Default is "" (an empty string).</code></pre>
+<p>@return boolean                 Returns TRUE on success of FALSE on error</p></div>
+<div class="subelement argument"><h4>$columns</h4></div>
+<div class="subelement argument"><h4>$where</h4></div>
+<div class="subelement argument"><h4>$replacements</h4></div>
+</div></div>
+</div>
+<a id="method_version"></a><div class="element clickable method public method_version " data-target=".method_version " title="public">
+<h2>version</h2>
+<pre>version() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Retrieves the current version information of library</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method__build_columns"></a><div class="element clickable method private method__build_columns " data-target=".method__build_columns " title="private">
+<h2>_build_columns</h2>
+<pre>_build_columns($columns) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Given an associative array or a string with comma separated values where the values represent column names, this
+method will enclose column names in grave accents &quot; ` &quot; (thus, allowing seamless usage of reserved words as column
+names) and automatically \escape() value.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private
+
+ @return string</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$columns</h4></div>
+</div></div>
+</div>
+<a id="method__build_sql"></a><div class="element clickable method private method__build_sql " data-target=".method__build_sql " title="private">
+<h2>_build_sql</h2>
+<pre>_build_sql($columns) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Given an associative array where the array's keys represent column names and the array's values represent the
+values to be associated with each respective column, this method will enclose column names in grave accents &quot; ` &quot;
+(thus, allowing seamless usage of reserved words as column names) and automatically \escape() value.</p>
+<p>It will also take care of particular cases where the INC keyword is used in the values, where the INC keyword is
+used with a parameter marker (&quot;?&quot;, question mark) or where a value is a single question mark - which throws an
+error message.</p>
+<p>This method may also alter the original variable given as argument, as it is passed by reference!</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$columns</h4></div>
+</div></div>
+</div>
+<a id="method__connect"></a><div class="element clickable method private method__connect " data-target=".method__connect " title="private">
+<h2>_connect</h2>
+<pre>_connect(mixed $host<code> = null</code>, $username<code> = null</code>, $password<code> = null</code>, $dbname<code> = null</code>, $port<code> = null</code>, $socket<code> = null</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Opens a connection to a MySQL Server and selects a database.</p>
+<p><code>
+// create the database object
+$db = new DHTMLSQL();</p>
+<p>$db-&gt;connect('host', 'username', 'password', 'database');
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$host</h4>
+<code>mixed</code><p>The address of the MySQL server to connect to (i.e. localhost).</p>
+<pre><code>                         Prepending host by <b>p:</b> opens a persistent connection.
+
+                        If the host is an already existing mysqli connection, then it shall be re-used</code></pre>
+<p>@param  string  $username   (Optional) The user name used for authentication when connecting to the MySQL server.</p>
+<p>@param  string  $password   (Optional) The password used for authentication when connecting to the MySQL server.</p>
+<p>@param  string  $dbname     (Optional) The database to be selected after the connection is established.</p>
+<p>@param  string  $port       (Optional) The port number to attempt to connect to the MySQL server.</p>
+<pre><code>                         Leave as empty string to use the default as returned by ini_get("mysqli.default_port").</code></pre>
+<p>@param  string  $socket     (Optional) The socket or named pipe that should be used.</p>
+<pre><code>                         Leave as empty string to use the default as returned by ini_get("mysqli.default_socket").
+
+                         Specifying the socket parameter will not explicitly determine the type of connection
+                         to be used when connecting to the MySQL server. How the connection is made to the MySQL
+                         database is determined by the <i>host</i> argument.</code></pre>
+<p>@return object             DHTMLSQL object is returned</p></div>
+<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument"><h4>$password</h4></div>
+<div class="subelement argument"><h4>$dbname</h4></div>
+<div class="subelement argument"><h4>$port</h4></div>
+<div class="subelement argument"><h4>$socket</h4></div>
+</div></div>
+</div>
+<a id="method__is_result"></a><div class="element clickable method private method__is_result " data-target=".method__is_result " title="private">
+<h2>is_result</h2>
+<pre>_is_result($value) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Checks is a value is a valid result set obtained from a query against the database</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_session_log"></a><div class="element clickable method private method_session_log " data-target=".method_session_log " title="private">
+<h2>session_log</h2>
+<pre>session_log(string $log<code> = ''</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Enables internal logging of SQL queries to file</p>
+<p><code>
+$db-&gt;session_logger=&quot;sql.log&quot;;
+$db-&gt;session_logging=true;
+$db-&gt;query(&quot;select 1&quot;);
+</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$log</h4>
+<code>string</code><p>(Optional) The string to be logged</p>
+<p>@access private</p>
+<p>@return void</p></div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_halt_on_error"> </a><div class="element clickable property public property_halt_on_error" data-toggle="collapse" data-target=".property_halt_on_error" title="public">
+<h2>halt_on_error</h2>
+<pre>$halt_on_error : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>true</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Determines if application should halt whenever there is a database error</p>
+<p>Default is TRUE.</p></div></div></div>
+</div>
+<a id="property_last_result"> </a><div class="element clickable property public property_last_result" data-toggle="collapse" data-target=".property_last_result" title="public">
+<h2>last_result</h2>
+<pre>$last_result : resource</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Last database result resource</p>
+<p>Default is null.</p></div></div></div>
+</div>
+<a id="property_print_error"> </a><div class="element clickable property public property_print_error" data-toggle="collapse" data-target=".property_print_error" title="public">
+<h2>print_error</h2>
+<pre>$print_error : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>true</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Prints error log to screen whenever an error occurs while executing a statement</p>
+<p>Default is TRUE.</p></div></div></div>
+</div>
+<a id="property_returned_rows"> </a><div class="element clickable property public property_returned_rows" data-toggle="collapse" data-target=".property_returned_rows" title="public">
+<h2>returned_rows</h2>
+<pre>$returned_rows : integer</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Number of rows returned by query</p>
+<p>Default is 0.</p></div></div></div>
+</div>
+<a id="property_session_logger"> </a><div class="element clickable property public property_session_logger" data-toggle="collapse" data-target=".property_session_logger" title="public">
+<h2>session_logger</h2>
+<pre>$session_logger : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>''</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Configures the path where database queries will be logged if session_logging is set to true
+It can be a path that is writeable
+If this is not specified and session_logging=true then dbase.log will be used for logging by default</p>
+<p>Default is an empty string.</p></div></div></div>
+</div>
+<a id="property_session_logging"> </a><div class="element clickable property public property_session_logging" data-toggle="collapse" data-target=".property_session_logging" title="public">
+<h2>session_logging</h2>
+<pre>$session_logging : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>false</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Configures library database query logging
+When set to true, each query executed is logged to dbase.log</p>
+<p>Default is FALSE.</p></div></div></div>
+</div>
+<a id="property_Instance"> </a><div class="element clickable property private property_Instance" data-toggle="collapse" data-target=".property_Instance" title="private">
+<h2>Instance</h2>
+<pre>$Instance </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Static library class</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private
+
+ @var  resource</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_connect_error"> </a><div class="element clickable property private property_connect_error" data-toggle="collapse" data-target=".property_connect_error" title="private">
+<h2>connect_error</h2>
+<pre>$connect_error : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>""</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Logs the connection error if there is one</p>
+<p>Default is an empty string.</p></div></div></div>
+</div>
+<a id="property_connection"> </a><div class="element clickable property private property_connection" data-toggle="collapse" data-target=".property_connection" title="private">
+<h2>connection</h2>
+<pre>$connection </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>MySQL link identifier.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private
+
+ @var  object</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_last_sql"> </a><div class="element clickable property private property_last_sql" data-toggle="collapse" data-target=".property_last_sql" title="private">
+<h2>last_sql</h2>
+<pre>$last_sql </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>""</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Last sql statement issues internally</p>
+<p>Default is an empty string.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private
+
+ @var  string</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_preview_mode"> </a><div class="element clickable property private property_preview_mode" data-toggle="collapse" data-target=".property_preview_mode" title="private">
+<h2>preview_mode</h2>
+<pre>$preview_mode : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>false</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Configures the special preview mode
+When set to true, each query meant to be executed will be printed and on screen and not executed
+This is useful in development mode for testing the library</p>
+<p>Default is FALSE.</p></div></div></div>
+</div>
+<a id="property_result"> </a><div class="element clickable property private property_result" data-toggle="collapse" data-target=".property_result" title="private">
+<h2>result</h2>
+<pre>$result </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>MySQL result set.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private
+
+ @var  object</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_version"> </a><div class="element clickable property private property_version" data-toggle="collapse" data-target=".property_version" title="private">
+<h2>version</h2>
+<pre>$version </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>"1.0.0"</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Current library version</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private
+
+ @var  string</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Copyright (c) <a href="http://africoders.com/">Africoders</a>, all rights reserved.
+			You can view the project on <a href="https://github.com/dhtml/dhtmlsql">github</a> or view the tutorials 
+			<a href="http://dhtml.github.com/dhtmlsql/">here</a>.
+			<br>
+            Last updated on 2016-01-17T18:06:06+01:00.<br></footer></div>
+</div>
+</body>
+</html>

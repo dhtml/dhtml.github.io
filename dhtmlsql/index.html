@@ -8,20 +8,24 @@
 	<meta name="description" content="Powerful and modern mysqli alternative for serious PHP developers.">
 	<meta name="author" content="Anthony Ogundipe">
 
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/screen.css" rel="stylesheet">
-	<link href="css/prettify.css" rel="stylesheet">
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/screen.css" rel="stylesheet">
+	<link href="assets/css/prettify.css" rel="stylesheet">
 
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+	<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.png">
+
 	
-	<script src="js/jquery-1.9.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/prettify.js"></script>
-	<script src="js/scripts.js"></script>
+	<script src="assets/js/jquery-1.9.1.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/prettify.js"></script>
+	<script src="assets/js/scripts.js"></script>
 
 </head>
 
@@ -57,14 +61,21 @@
 					<i class="icon-github"></i> Github
 				</a>
 			</li>
+			<li>
+				<a class="btn" href="./api">
+					<i class="icon-eye-open"></i> Full API Docs
+				</a>
+			</li>
+			
+			
 			<li style="float: right;padding-right: 0">
 				
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"  style="margin: 0">
-<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="cmd" value="_s-xclick"/>
 <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+"/>
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
 </form>
 
 
@@ -236,7 +247,9 @@ exit("Unable to connect to database. Reason: ".$db->connect_error());
 //optionally set your character-set and collation here
 $db->set_charset('utf8','utf8_general_ci');
 </pre>
-
+<p> <a class="btn" href="./api">
+					<i class="icon-eye-open"></i> Full API Documentation
+				</a></p>
 <h3>Checking Library Version</h3>
 <p>You need to require the <code>config.php</code> from now henceforth. This little sample is to check if your connection is doing fine</p>
 
@@ -879,6 +892,10 @@ $db->reset_session_logger();
 	<p>
 	DHTMLSQL can re-use any existing MySQLi connection. To implement this library in developing your plugins, you need to look at the Advanced Start section and figure out how to get the MySQLi handle of your framework.
 	</p>
+	
+	<p>Please do not forget that there is more to this library than what you have read. You might want to read the 
+	<a class="btn" href="./api">Full API documentation</a> to learn more about this library.</p>
+
 
 	<p>
 		<a href="https://github.com/dhtml/dhtmlsql/issues">Issues and feature requests</a> are very welcome.
