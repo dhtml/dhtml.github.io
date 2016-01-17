@@ -91,21 +91,14 @@
 <div class="span9">
 <section id="intro">
 	<div class="page-header">
-		<h1>DHTMLSQL - a modern and powerful PHP MySQLi Wrapper</h1>
+		<h1>Introduction</h1>
 	</div>
 
 	<h3>What is it?</h3>
 
-	<p>
-		DHTMLSQL for PHP is a tool designed to make it very easy to handle your SQL database.
-	</p>
-	<p>
-		In other words, it is <code>MySQLi</code> on steroids. Easy to use, but
+	<h4>An advanced, compact and lightweight MySQL database wrapper library, built around PHP's mysqli extension.</h4>
+	In other words, it is <code>MySQLi</code> on steroids. Easy to use, but
 		powerful and customizable. An essential addition to your development toolbox.
-	</p>
-	<p>
-		<strong>Still lost?</strong> You use it to instead of writting MySQL or MySQLi functions directly.
-	</p>
 
 
 	<h2>What's so great about it?</h2>
@@ -203,8 +196,7 @@ $db->export('*','dbtest.sql');
 
 	<h3>Requirements</h3>
 
-	<p>
-		<strong>PHP 5+</strong> is supported, although the library might work fine in lower versions.
+	<p>PHP 5+ with the <strong>mysqli extension</strong> activated, MySQL 4.1.22+.
 	</p>
 	<h3>Quick start</h3>
 
@@ -831,7 +823,7 @@ echo $db->fetch_sql();
 <p>The preview mode will render the actual SQL statements without execution:</p>
 <pre class="prettyprint linenums">
 $db->preview(true);
-echo $db->select("f.first,f.last","users u left join profiles p on p.id=u.pid","p.id = ? and p.status>?",array(2,5)); 
+$db->select("f.first,f.last","users u left join profiles p on p.id=u.pid","p.id = ? and p.status>?",array(2,5)); 
 </pre>
 
 
@@ -857,6 +849,23 @@ $db->select('FirstName,LastName','Employees');
 while($row=$db->fetch_array()) {
 	var_dump($row);	
 }
+</pre>
+
+	
+<h4>Logging Your SQL Outputs</h4>
+<p>If you want to enable saving of SQL outputs to SQL, use the code below:</p>
+<pre class="prettyprint linenums">
+$db->log_output_file="sql.log";
+$db->enable_file_logging=true;
+$db->reset_log_output_file();
+</pre>
+	
+<h4>Clearing SQL Output Logs</h4>
+<p>If you wish to clear the output log:</p>
+<pre class="prettyprint linenums">
+$db->log_output_file="sql.log";
+$db->enable_file_logging=true;
+$db->reset_log_output_file();
 </pre>
 
 
