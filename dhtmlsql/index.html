@@ -839,8 +839,15 @@ $db->preview(true);
 $db->select("f.first,f.last","users u left join profiles p on p.id=u.pid","p.id = ? and p.status>?",array(2,5)); 
 </pre>
 
+<h3>Using The Internal Pagination</h3>
+<p>If you have a query with a lot of results, you can break it down using the following:</p>
+<pre class="prettyprint linenums">
+$db->pquery('select * from country',5,'page');
+while($row=$db->fetch_assoc()) {var_dump($row);}
+if($db->num_rows>0) {echo $db->show_navigation();}
+</pre>
 
-	</section>
+</section>
 
 <section id="navigation">
 	<h2>Shortcuts</h2>

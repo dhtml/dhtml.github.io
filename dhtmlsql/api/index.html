@@ -80,6 +80,8 @@
 <li class="method public "><a href="#method_load" title="load() :: load"><span class="description">load</span><pre>load()</pre></a></li>
 <li class="method public "><a href="#method_num_rows" title="num_rows() :: Gets the number of rows returned in a select statement"><span class="description">Gets the number of rows returned in a select statement</span><pre>num_rows()</pre></a></li>
 <li class="method public "><a href="#method_optimize" title="optimize() :: optimize"><span class="description">optimize</span><pre>optimize()</pre></a></li>
+<li class="method public "><a href="#method_pquery" title="pquery() :: pquery"><span class="description">pquery</span><pre>pquery()</pre></a></li>
+<li class="method public "><a href="#method_pquery_all" title="pquery_all() :: pquery_all"><span class="description">pquery_all</span><pre>pquery_all()</pre></a></li>
 <li class="method public "><a href="#method_preview" title="preview() :: preview"><span class="description">preview</span><pre>preview()</pre></a></li>
 <li class="method public "><a href="#method_query" title="query() :: query"><span class="description">query</span><pre>query()</pre></a></li>
 <li class="method public "><a href="#method_replace" title="replace() :: replace"><span class="description">replace</span><pre>replace()</pre></a></li>
@@ -87,6 +89,7 @@
 <li class="method public "><a href="#method_reset_session_logger" title="reset_session_logger() :: reset_session_logger"><span class="description">reset_session_logger</span><pre>reset_session_logger()</pre></a></li>
 <li class="method public "><a href="#method_select" title="select() :: select"><span class="description">select</span><pre>select()</pre></a></li>
 <li class="method public "><a href="#method_set_charset" title="set_charset() :: set_charset"><span class="description">set_charset</span><pre>set_charset()</pre></a></li>
+<li class="method public "><a href="#method_show_navigation" title="show_navigation() :: show_navigation"><span class="description">show_navigation</span><pre>show_navigation()</pre></a></li>
 <li class="method public "><a href="#method_table_exists" title="table_exists() :: table_exists"><span class="description">table_exists</span><pre>table_exists()</pre></a></li>
 <li class="method public "><a href="#method_truncate" title="truncate() :: truncate"><span class="description">truncate</span><pre>truncate()</pre></a></li>
 <li class="method public "><a href="#method_update" title="update() :: update"><span class="description">update</span><pre>update()</pre></a></li>
@@ -834,6 +837,59 @@ echo $db-&gt;num_rows();
 $db-&gt;optimize();
 </code></p></div></div></div>
 </div>
+<a id="method_pquery"></a><div class="element clickable method public method_pquery " data-target=".method_pquery " title="public">
+<h2>pquery</h2>
+<pre>pquery(string $sql, $items_per_page<code> = 10</code>, $pager_variable<code> = 'page'</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function will execute an sql query in pagination mode</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>a normal sql query without limits e.g. select first,last from Employees</p>
+<p>@param  string    $items_per_page      the number of results to list per page</p>
+<p>@param  string    $pager_variable_item  the pagination variable to use in the browser</p>
+<p>If the property belongs to the result object, it shall be retrieved
+otherwise, if it belongs to the connection object, it shall be subsequently retrieved
+otherwise null shall be returned</p>
+<p>An example is shown below:
+<code>
+$db->pquery('select * from country',5,'page');</p>
+<p>while($row=$db->fetch_assoc()) {
+var_dump($row);
+}</p>
+<p>if($db->pager->num_rows>0) {
+echo $db->pager->show_navigation();
+}
+</code></p>
+<p>@return boolean                True for success, false for failure</p></div>
+<div class="subelement argument"><h4>$items_per_page</h4></div>
+<div class="subelement argument"><h4>$pager_variable</h4></div>
+</div></div>
+</div>
+<a id="method_pquery_all"></a><div class="element clickable method public method_pquery_all " data-target=".method_pquery_all " title="public">
+<h2>pquery_all</h2>
+<pre>pquery_all(string $sql) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function will execute an sql query in pagination mode and render all possible results</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>a normal sql query without limits e.g. select first,last from Employees</p>
+<p>If the property belongs to the result object, it shall be retrieved
+otherwise, if it belongs to the connection object, it shall be subsequently retrieved
+otherwise null shall be returned</p>
+<p>An example is shown below:
+<code>
+$db->pquery_all('select * from country');</p>
+<p>while($row=$db->fetch_assoc()) {
+var_dump($row);
+}</p>
+<p></code></p>
+<p>@return boolean                True for success, false for failure</p></div>
+</div></div>
+</div>
 <a id="method_preview"></a><div class="element clickable method public method_preview " data-target=".method_preview " title="public">
 <h2>preview</h2>
 <pre>preview($mode) : void</pre>
@@ -1047,6 +1103,17 @@ thing after connecting to the database.</p>
                          {@link http://dev.mysql.com/doc/refman/5.1/en/charset-charsets.html}</code></pre>
 <p>@return void</p></div>
 <div class="subelement argument"><h4>$collation</h4></div>
+</div></div>
+</div>
+<a id="method_show_navigation"></a><div class="element clickable method public method_show_navigation " data-target=".method_show_navigation " title="public">
+<h2>show_navigation</h2>
+<pre>show_navigation() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function will return the html code for the navigation interface</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>html code for pagination area</div>
 </div></div>
 </div>
 <a id="method_table_exists"></a><div class="element clickable method public method_table_exists " data-target=".method_table_exists " title="public">
@@ -1470,7 +1537,7 @@ This is useful in development mode for testing the library</p>
 			You can view the project on <a href="https://github.com/dhtml/dhtmlsql">github</a> or view the tutorials 
 			<a href="http://dhtml.github.com/dhtmlsql/">here</a>.
 			<br>
-            Last updated on 2016-01-17T19:34:20+01:00.<br></footer></div>
+            Last updated on 2016-03-23T12:35:33+01:00.<br></footer></div>
 </div>
 </body>
 </html>
