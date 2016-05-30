@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>phpsocket.io, a library that allows real-time communication between a client and server via web sockets</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Powerful and modern mysqli alternative for serious PHP developers.">
+	<meta name="author" content="Anthony Ogundipe">
+
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/screen.css" rel="stylesheet">
+	<link href="assets/css/prettify.css" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+	<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.png">
+
+	
+	<script src="assets/js/jquery-1.9.1.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/prettify.js"></script>
+	<script src="assets/js/scripts.js"></script>
+
+</head>
+
+<body data-spy="scroll" data-target="#scrollspy" data-offset="45">
+
+<header class="main-header subhead" id="overview">
+	<div class="container">
+		<h1>PHPSocket.Io</h1>
+
+		<p class="lead">
+			<strong>PHP</strong> replacement for
+			<strong><a href="http://socket.io">socket.io</a></strong>
+		</p>
+	</div>
+</header>
+
+<div class="actions-bar" data-spy="affix" data-offset-top="230">
+	<div class="container">
+		<ul class="actions-bar-buttons clearfix">
+			<li style="padding-left: 0">
+				<a class="btn btn-primary" href="https://github.com/dhtml/phpsocket.io/archive/master.zip">
+					<i class="icon-download icon-white"></i> Download
+				</a>
+			</li>
+			<!--<li>-->
+			<!--<a class="btn disabled" href="">-->
+			<!--<i class="icon-eye-open"></i> View demos-->
+			<!--</a>-->
+			<!--</li>-->
+			<li>
+				<a class="btn" href="https://github.com/dhtml/phpsocket.io/">
+					<i class="icon-github"></i> Github
+				</a>
+			</li>
+			
+			
+			<li style="float: right;padding-right: 0">
+<!--				
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"  style="margin: 0;display:none">
+<input type="hidden" name="cmd" value="_s-xclick"/>
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+"/>
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
+</form>
+-->
+
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="container">
+<div class="row">
+
+<div class="span3" id="scrollspy">
+	<ul class="nav nav-list side-navigation" data-spy="affix" data-offset-top="230">
+		<li><a href="#intro"><i class="icon-chevron-right"></i> About</a></li>
+		<li><a href="#installation"><i class="icon-chevron-right"></i> Installation & config</a></li>
+		<li><a href="#simple"><i class="icon-chevron-right"></i> Simple usage</a></li>
+		<li><a href="#advanced"><i class="icon-chevron-right"></i> Online Examples</a></li>
+		<li><a href="#about"><i class="icon-chevron-right"></i> Notes and credits</a></li>
+		<li><a href="#comments"><i class="icon-chevron-right"></i> Leave a comment</a></li>
+	</ul>
+</div>
+
+<div class="span9">
+<section id="intro">
+	<div class="page-header">
+		<h1>Introduction</h1>
+	</div>
+
+	<h3>What is it?</h3>
+
+	<h4>PHPSocket.IO is a library written in PHP/JavaScript that allows real-time communication between a client and server via web sockets.</h4>
+	In other words, it is very similar to NODE's <code>socket.io</code>. Easy to use, but
+		powerful and customizable. An essential addition to your development toolbox.
+
+
+
+</section>
+
+<section id="installation">
+
+	<h2>Installation and config</h2>
+	<hr>
+
+	<h3>Requirements</h3>
+
+	<p>PHP 5.3+
+	</p>
+	<h3>Quick start</h3>
+
+	<p>You need to start the server from the commandline and not from inside the browser.
+
+<pre class="prettyprint linenums">
+$: php server/socketio.php 
+</pre>
+
+From linux, you may want to use: nohup php server/socketio.php <br/>
+
+The server is meant to be running continuously so that it waits for connection, if you close the server, then the functionality will stop. <br/>
+
+
+After you have successfully started the server, you can run the client from the browser <b>examples/basic/index.html</b> or <b>examples/advanced/index.html</b> <br/>
+</p>
+
+
+<h3>Configuration</h3>
+
+<p>Before running the php server, you need to configure the port to run the socket installation on inside <b>socketio.php</b></p>
+<pre class="prettyprint linenums">
+$server_port="2000";
+</pre>
+
+</section>
+
+<section id="simple">
+
+	<h2>Simple usage</h2>
+	<hr>
+
+<h3>1. The basic example server code (inside socketio.php)</h3>
+
+<pre class="prettyprint">
+$socket->on('chat message', function ($socket,$data,$sender) {
+$socket->broadcast('chat message', $data,true);
+})
+</pre>
+<br/>
+<p>The above code is a server event that occurs when a message is sent from the client. The message is broadcasted to everyone.</p> 
+</section>
+
+<h3>2. The basic example script</h3>
+<pre><xmp>var socket=$.websocket('ws://162.144.68.201:2000');
+	
+$('form').submit(function() {
+  socket.emit('chat message', $('#m').val());
+  $('#m').val('');
+  return false;
+});
+socket.on('chat message', function(msg){
+    $('#messages').append($('<li>').text(msg));
+});
+socket.on('connect', function(user){
+    $('#messages').append($('<li>').text("Welcome "+user));
+});
+	  
+socket.listen();</xmp></pre>
+
+<br>
+<p>When creating a connection to a server, you need to specify the server's ip address and the port number (inside the configuration of socketio.php explained earlier).
+If your server is example.com and you configure socketio.php to run on port 400
+then you need to connect with <b>$.websocket('ws://example.com:400')</b>.
+However, you need to start your server before attempting connection with the client.<br/>
+If you are running on localhost, then your server ip should be something like 127.0.0.1.
+</p>
+
+
+<section id="advanced">
+
+	<h2>Online Examples</h2>
+	These examples utilize a multiple chatrooms where everyone can chat simultaenously.
+	You can run any of these chats via different browser tabs, or different browsers or different devices.
+	<br/>
+	No database storage is utilized in any forms in these examples. No session variables were used either.
+	<hr>
+	
+	<ol style="margin-bottom:0;padding-bottom:0;">
+	<li style="margin-bottom:10px;"> Click here to run the <a href="examples/basic/index.html" target="_blank">basic example</a>.
+	<li> Click here to run the <a href="examples/advanced/index.html" target="_blank">advanced example</a>.
+	</ol>
+
+
+</section>
+
+
+<section id="about">
+	<h2>Notes</h2>
+	<hr>
+	<p>
+	phpsocket.io can re-use any existing MySQLi connection. To implement this library in developing your plugins, you need to look at the Advanced Start section and figure out how to get the MySQLi handle of your framework.
+	</p>
+	
+
+
+	<p>
+		<a href="https://github.com/dhtml/phpsocket.io/issues">Issues and feature requests</a> are very welcome.
+	</p>
+
+	<h3>Credits</h3>
+
+	<p>Inspired by the general open-source community with special thanks to Github for making the life of programmers more fun.</p>
+
+	<h3>Shoutouts</h3>
+
+	<p>Check out <a href="http://www.africoders.com/">an awesome developer portal</a> created by yours truly.</p>
+
+	<h3>Author</h3>
+
+	<p>
+		<strong>Anthony Ogundipe</strong> a.k.a. <a href="https://github.com/dhtml">dhtml</a>
+	</p>
+	<p>
+		<strong>Special thanks</strong> to  <a href="https://www.facebook.com/wasconet">Adewale Wilson</a> for his contributions to this library.
+
+	</p>
+
+	<h3>License</h3>
+
+	<p>phpsocket.io is licensed under the MIT License.</p>
+</section>
+
+
+</div>
+</div>
+
+</div>
+
+
+<footer class="footer">
+	<div class="container">
+	</div>
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72531012-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
